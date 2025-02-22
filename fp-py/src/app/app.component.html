@@ -1,2 +1,14 @@
+<div class="navbar-container">
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <!-- Left Side Logo/Text -->
+    <a class="navbar-brand" routerLink="/lessons">Functional Programming</a>
 
-<router-outlet />
+    <!-- Right Side Buttons -->
+    <div class="ms-auto">
+      <button class="btn btn-outline-primary me-2" routerLink="/lessons">Lessons</button>
+      <button class="btn btn-primary">Quiz</button>
+    </div>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>
