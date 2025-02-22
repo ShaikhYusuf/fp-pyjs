@@ -1,0 +1,289 @@
+<!-- Lesson 3: Intermediate Functional Programming Concepts -->
+
+<div class="lesson-container">
+    <h1>Lesson 3: Intermediate Functional Programming Concepts</h1>
+
+    <p>In this lesson, we cover several intermediate concepts in functional programming with examples in both JavaScript
+        and Python. The concepts include Pattern Matching, Recursion, Lazy Evaluation, Type Systems, Currying, and
+        Partial Application.</p>
+
+    <!-- 1. Pattern Matching -->
+    <section>
+        <h2>1. Pattern Matching</h2>
+        <p>Pattern Matching is a way to check data structures against a pattern and extract values accordingly. While
+            JavaScript doesn’t have direct pattern matching, it can achieve similar behavior using destructuring and
+            switch-case statements. Python, however, has built-in pattern matching from version 3.10+ using match-case.
+        </p>
+
+        <h3>JavaScript: Destructuring</h3>
+        <pre>
+            <code>
+// Array destructuring
+const [a, b, c] = [1, 2, 3];
+console.log(a, b, c); // Output: 1 2 3
+
+// Object destructuring
+const person = {{'{'}} name: "Alice", age: 25 {{'}'}};
+const {{'{'}} name, age {{'}'}} = person;
+console.log(name, age); // Output: Alice 25
+            </code>
+        </pre>
+
+        <h3>JavaScript: switch-case Pattern Matching</h3>
+        <pre>
+            <code>
+function getStatus(statusCode) {{'{'}}
+    switch (statusCode) {{'{'}}
+        case 200:
+            return "Success";
+        case 404:
+            return "Not Found";
+        case 500:
+            return "Server Error";
+        default:
+            return "Unknown Status";
+    {{'}'}}
+{{'}'}}
+
+console.log(getStatus(200)); // Output: Success
+            </code>
+        </pre>
+
+        <h3>Python: match-case Pattern Matching</h3>
+        <pre>
+            <code>
+# Matching Values
+def get_status(status_code):
+    match status_code:
+        case 200:
+            return "Success"
+        case 404:
+            return "Not Found"
+        case 500:
+            return "Server Error"
+        case _:
+            return "Unknown Status"
+
+print(get_status(200))  # Output: Success
+
+# Matching Data Structures
+point = (10, 20)
+
+match point:
+    case (0, 0):
+        print("Origin")
+    case (x, 0):
+        print(f"X-axis at {{'}}")
+    case (0, y):
+        print(f"Y-axis at {{'}}")
+    case (x, y):
+        print(f"Point at {{'}}")
+            </code>
+        </pre>
+    </section>
+
+    <!-- 2. Recursion -->
+    <section>
+        <h2>2. Recursion</h2>
+        <p>Recursion is when a function calls itself to solve a problem, typically breaking down a problem into smaller,
+            more manageable sub-problems.</p>
+
+        <h3>JavaScript: Fibonacci Example</h3>
+        <pre>
+            <code>
+// Recursive function to find the nth Fibonacci number
+function fibonacci(n) {{'{'}}
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+{{'}'}}
+
+console.log(fibonacci(5)); // Output: 5
+            </code>
+        </pre>
+
+        <h3>Python: Fibonacci Example</h3>
+        <pre>
+            <code>
+# Recursive function to find the nth Fibonacci number
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(5))  # Output: 5
+            </code>
+        </pre>
+    </section>
+
+    <!-- 3. Tail Recursion and Optimization -->
+    <section>
+        <h2>3. Tail Recursion and Optimization</h2>
+        <p>Tail Recursion occurs when the recursive call is the last operation in the function. Optimizing tail
+            recursion ensures no additional stack frames are created, improving performance.</p>
+
+        <h3>JavaScript: Tail Recursion</h3>
+        <pre>
+            <code>
+function fibonacciTail(n, a = 0, b = 1) {{'{'}}
+    if (n === 0) return a;
+    return fibonacciTail(n - 1, b, a + b);
+{{'}'}}
+
+console.log(fibonacciTail(5)); // Output: 5
+            </code>
+        </pre>
+
+        <h3>Python: Tail Recursion</h3>
+        <pre>
+            <code>
+def fibonacci_tail(n, a=0, b=1):
+    if n == 0:
+        return a
+    return fibonacci_tail(n - 1, b, a + b)
+
+print(fibonacci_tail(5))  # Output: 5
+            </code>
+        </pre>
+    </section>
+
+    <!-- 4. Lazy Evaluation -->
+    <section>
+        <h2>4. Lazy Evaluation</h2>
+        <p>Lazy Evaluation is when an expression is evaluated only when its value is needed, rather than immediately.
+            This helps optimize performance in cases where values are computed on-demand.</p>
+
+        <h3>JavaScript Generators (function)</h3>
+        <pre>
+            <code>
+function* infiniteNumbers() {{'{'}}
+    let i = 1;
+    while (true) {{'{'}}
+        yield i++;
+    {{'}'}}
+{{'}'}}
+
+const gen = infiniteNumbers();
+console.log(gen.next().value); // Output: 1
+console.log(gen.next().value); // Output: 2
+            </code>
+        </pre>
+
+        <h3>Python Generators (yield)</h3>
+        <pre>
+            <code>
+def infinite_numbers():
+    i = 1
+    while True:
+        yield i
+        i += 1
+
+gen = infinite_numbers()
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+            </code>
+        </pre>
+    </section>
+
+    <!-- 5. Type Systems in Functional Programming -->
+    <section>
+        <h2>5. Type Systems in Functional Programming</h2>
+        <p>Type Systems in functional programming ensure that values have a specific type. JavaScript is dynamically
+            typed and weakly typed, while Python is dynamically typed but allows optional type annotations.</p>
+
+        <h3>JavaScript: Weak Typing & Type Inference</h3>
+        <pre>
+            <code>
+// TypeScript for Type Safety
+function add(a: number, b: number): number {{'{'}}
+    return a + b;
+{{'}'}}
+
+console.log(add(3, 5)); // Output: 8
+            </code>
+        </pre>
+
+        <h3>Python: Type Annotations</h3>
+        <pre>
+            <code>
+# Python type annotations
+def add(a: int, b: int) -> int:
+    return a + b
+
+print(add(3, 5))  # Output: 8
+            </code>
+        </pre>
+    </section>
+
+    <!-- 6. Currying and Partial Application -->
+    <section>
+        <h2>6. Currying and Partial Application</h2>
+        <p>Currying transforms a function that takes multiple arguments into a series of functions that each take one
+            argument at a time. Partial Application allows you to fix some arguments of a function and generate a new
+            function.</p>
+
+        <h3>Currying</h3>
+        <h4>JavaScript Currying:</h4>
+        <pre>
+            <code>
+// Currying in JavaScript
+const add = (a) => (b) => a + b;
+
+const addFive = add(5);
+console.log(addFive(3)); // Output: 8
+            </code>
+        </pre>
+
+        <h4>Python Currying:</h4>
+        <pre>
+            <code>
+# Currying in Python
+def add(a):
+    return lambda b: a + b
+
+add_five = add(5)
+print(add_five(3))  # Output: 8
+            </code>
+        </pre>
+
+        <h3>Partial Application</h3>
+        <h4>JavaScript Partial Application (using bind):</h4>
+        <pre>
+            <code>
+// Partial application in JavaScript
+function multiply(a, b) {{'{'}}
+    return a * b;
+{{'}'}}
+
+const double = multiply.bind(null, 2);
+console.log(double(4)); // Output: 8
+            </code>
+        </pre>
+
+        <h4>Python Partial Application (using functools.partial):</h4>
+        <pre>
+            <code>
+from functools import partial
+
+# Partial application in Python
+def multiply(a, b):
+    return a * b
+
+double = partial(multiply, 2)
+print(double(4))  # Output: 8
+            </code>
+        </pre>
+    </section>
+
+    <!-- Conclusion -->
+    <section>
+        <h2>Conclusion</h2>
+        <ul>
+            <li>Pattern Matching simplifies working with structured data by allowing easy extraction of values.</li>
+            <li>Recursion is a powerful technique used for problems like Fibonacci sequences and tree traversals.</li>
+            <li>Lazy Evaluation improves performance by computing values only when they are required.</li>
+            <li>Type Systems help ensure safety and consistency with values of specific types.</li>
+            <li>Currying and Partial Application are useful for creating reusable, modular functions and improving code
+                flexibility.</li>
+        </ul>
+    </section>
+</div>

@@ -1,0 +1,99 @@
+<!-- lesson2.component.html -->
+<div class="lesson">
+  <h2>Lesson 2: Basic Functional Programming Concepts</h2>
+  
+  <h3>1. First-class and Higher-order Functions</h3>
+  
+  <h4>First-class Functions:</h4>
+  <p>A first-class function is a function that can be treated like any other value.</p>
+  <ul>
+    <li>It can be assigned to a variable.</li>
+    <li>It can be passed as an argument to another function.</li>
+    <li>It can be returned from a function.</li>
+  </ul>
+  
+  <h4>Higher-order Functions (HOFs):</h4>
+  <p>A higher-order function is a function that:</p>
+  <ul>
+    <li>Takes one or more functions as parameters.</li>
+    <li>Returns another function as a result.</li>
+  </ul>
+  
+  <pre>
+    <code>
+      const greet = function(name) &#123;
+        return `Hello, $&#123;name&#125;`;
+      &#125;;
+      console.log(greet("Alice")); 
+      
+      function applyFunction(fn, value) &#123;
+        return fn(value);
+      &#125;
+      console.log(applyFunction(greet, "Bob"));
+    </code>
+  </pre>
+  
+  <h3>2. Functions as Arguments and Return Values</h3>
+  <h4>JavaScript Example: Function as Argument</h4>
+  <pre>
+    <code>
+      function add(x, y) &#123;
+        return x + y;
+      &#125;
+
+      function operate(fn, a, b) &#123;
+        return fn(a, b);  
+      &#125;
+
+      console.log(operate(add, 5, 3));
+    </code>
+  </pre>
+  
+  <h3>3. Immutability and Data Structures</h3>
+  <h4>JavaScript Example: Object.freeze()</h4>
+  <pre>
+    <code>
+      const person = &#123; name: "Alice", age: 25 &#125;;
+      Object.freeze(person);
+      person.age = 26;  
+      console.log(person.age); 
+    </code>
+  </pre>
+  
+  <h3>4. Pure Functions</h3>
+  <h4>Pure Function Example:</h4>
+  <pre>
+    <code>
+      function add(a, b) &#123;
+        return a + b;
+      &#125;
+      console.log(add(2, 3));
+    </code>
+  </pre>
+
+  <h3>5. Lambda Expressions and Anonymous Functions</h3>
+  <h4>JavaScript Arrow Functions:</h4>
+  <pre>
+    <code>
+      const add = (a, b) => a + b;
+      console.log(add(2, 3));
+    </code>
+  </pre>
+
+  <h3>6. Map, Filter, and Reduce</h3>
+  <h4>JavaScript Example:</h4>
+  <pre>
+    <code>
+      const numbers = [1, 2, 3, 4, 5];
+
+      const squares = numbers.map(x => x * x);
+      console.log(squares);
+
+      const evens = numbers.filter(x => x % 2 === 0);
+      console.log(evens);
+
+      const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+      console.log(sum);
+    </code>
+  </pre>
+</div>
