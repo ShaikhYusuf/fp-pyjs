@@ -8,12 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { QuizComponent } from './quiz/quiz.component';
 
 export const routes: Routes = [
-    {path: 'home', component: HomeComponent},
-    {path: 'lessons', component: LessonsComponent},
-    {path: 'les1', component: Lessons1Component},
-    {path: 'les2', component: Lessons2Component},
-    {path: 'les3', component: Lesson3Component},
-    {path: 'les4', component: Lesson4Component},
-    {path: 'quiz', component: QuizComponent},
-
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'lessons', component: LessonsComponent },
+  { path: 'les1', component: Lessons1Component },
+  { path: 'les2', component: Lessons2Component },
+  { path: 'les3', component: Lesson3Component },
+  { path: 'les4', component: Lesson4Component },
+  { path: 'quiz', component: QuizComponent },
 ];
