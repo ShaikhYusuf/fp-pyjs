@@ -1,6 +1,7 @@
 .lesson-container {
   display: flex;
-  justify-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
