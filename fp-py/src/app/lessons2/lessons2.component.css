@@ -1,195 +1,202 @@
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+/* Global Styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container */
 .lesson {
-  max-width: 1200px; /* Adjusted width */
-  margin: 30px auto;
-  padding: 30px;
-  background-color: #fff;
+  margin-top: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
-/* Headings */
-h2, h3, h4, h6 {
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-h2 {
-  font-size: 2.5em;
-  color: #34495e;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  border-bottom: 3px solid #2980b9;
-  padding-bottom: 8px;
-  position: relative;
-}
-
-h2:hover {
-  color: #2980b9; /* Change color on hover */
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add text shadow effect */
-}
-
-h3 {
-  font-size: 1.8em;
-  color: #2980b9;
-  margin-top: 25px;
-  margin-bottom: 12px;
-  position: relative;
-}
-
-h3:hover {
-  color: #16a085; /* Change color on hover */
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add text shadow effect */
-}
-
-h4 {
-  font-size: 1.6em;
-  color: #2980b9;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-h4:hover {
-  color: #16a085; /* Change color on hover */
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add text shadow effect */
-}
-
-h6 {
-  font-size: 1.1em;
-  line-height: 1.8;
-  color: #7f8c8d;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-h6:hover {
-  color: #2980b9; /* Change color on hover */
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add text shadow effect */
-}
-
-/* Lists */
-ul {
-  margin-left: 30px;
+h2.lesson-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
   margin-bottom: 30px;
-}
-
-ul li {
-  font-size: 1.1em;
-  margin-bottom: 12px;
-  line-height: 1.8;
-  color: #555;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-ul li:hover {
-  color: #2980b9; /* Change color on hover */
-  transform: scale(1.05); /* Slight zoom effect on hover */
+h2.lesson-title:hover {
+  color: #2980b9;
+  transform: scale(1.05);
 }
 
-/* Code Styling */
+/* Section */
+.section {
+  margin-bottom: 30px;
+}
+
+h3.section-title {
+  font-size: 2rem;
+  color: #34495e;
+  margin: 20px 0 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #3498db;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h3.section-title:hover {
+  color: #2980b9;
+  transform: scale(1.05);
+}
+
+p.section-description {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #7f8c8d;
+  line-height: 1.8;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+p.section-description:hover {
+  color: #3498db;
+  transform: translateX(5px);
+}
+
+ul {
+  margin-left: 20px;
+  list-style-type: square;
+}
+
+li {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+  color: #3498db;
+  transform: translateX(5px);
+}
+
+/* Example Block */
+.example {
+  margin-bottom: 20px;
+}
+
+.example h5 {
+  font-size: 1.5rem;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
 pre {
-  background-color: #ecf0f1;
+  background-color: #2c3e50;
+  color: #ecf0f1;
   padding: 20px;
-  border-radius: 8px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2em;
-  color: #2c3e50;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-pre:hover {
-  background-color: #bdc3c7; /* Darker background on hover */
+  border-radius: 5px;
+  margin-top: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 code {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2em;
-  color: #e74c3c;
+  background-color: #ecf0f1;
+  padding: 0 5px;
+  border-radius: 3px;
 }
 
-/* Horizontal Line */
-hr {
-  border: 1px solid #bdc3c7;
-  margin: 30px 0;
-  transition: border-color 0.3s ease;
+.language-javascript, .language-python {
+  display: block;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #34495e;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
-hr:hover {
-  border-color: #2980b9; /* Change line color on hover */
+/* Summary Section */
+.section.summary {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-/* Paragraphs and Spacing */
-p {
-  font-size: 1.1em;
-  line-height: 1.8;
-  margin-bottom: 30px;
-  color: #555;
+.section.summary ul {
+  list-style-type: disc;
+  margin-left: 40px;
 }
 
-/* Links and Interactive Elements */
-a {
-  color: #2980b9;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #16a085; /* Green color on hover */
+.section.summary li {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .lesson {
-      padding: 25px;
+    padding: 15px;
   }
 
-  h2 {
-      font-size: 2.2em;
+  h2.lesson-title {
+    font-size: 2rem;
   }
 
-  h3 {
-      font-size: 1.6em;
+  h3.section-title {
+    font-size: 1.75rem;
   }
 
-  h4 {
-      font-size: 1.4em;
+  p.section-description {
+    font-size: 1rem;
   }
 
-  h6 {
-      font-size: 1.1em;
+  code {
+    font-size: 0.9rem;
+  }
+
+  .example h5 {
+    font-size: 1.2rem;
+  }
+
+  .section.summary ul {
+    margin-left: 30px;
+  }
+
+  .section.summary li {
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  h2.lesson-title {
+    font-size: 1.75rem;
+  }
+
+  h3.section-title {
+    font-size: 1.5rem;
+  }
+
   .lesson {
-      padding: 20px;
+    padding: 10px;
   }
 
-  h2 {
-      font-size: 1.8em;
+  .example h5 {
+    font-size: 1rem;
   }
 
-  h3 {
-      font-size: 1.4em;
-  }
-
-  h4 {
-      font-size: 1.2em;
-  }
-
-  h6 {
-      font-size: 1em;
+  .section.summary ul {
+    margin-left: 20px;
   }
 }

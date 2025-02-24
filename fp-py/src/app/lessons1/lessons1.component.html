@@ -1,81 +1,223 @@
-<div class="lesson">
-  
-    <h2>Lesson 1. What is Functional Programming?</h2>
-    <h6>
-      <strong>Functional Programming (FP)</strong> is a programming paradigm that focuses on writing software by defining and applying functions, without changing states or mutable data. Unlike other programming paradigms, FP avoids altering the program's data, promoting the use of functions to solve problems.
-    </h6>
-    <h6>
-      <strong>Key Characteristics of FP:</strong>
-      <ul>
-        <li><strong>Functions</strong> are the primary building blocks.</li>
-        <li><strong>Immutability</strong>: Once a variable or data structure is created, it cannot be changed.</li>
-        <li><strong>Pure functions</strong>: Functions return the same output when given the same input and do not cause side effects.</li>
-      </ul>
-    </h6>
-  
-    <hr>
-  
+<!-- app.component.html -->
+
+<div class="container">
+  <h1>Lesson 1: Introduction to Functional Programming (FP)</h1>
+
+  <!-- 1. What is Functional Programming? -->
+  <section id="what-is-fp">
+    <h2>1. What is Functional Programming?</h2>
+    <p>
+      Functional Programming (FP) is a programming paradigm where programs are constructed by applying and composing <strong>functions</strong>. Unlike imperative programming, which focuses on <strong>how to do things</strong> (step-by-step instructions), FP focuses on <strong>what to do</strong> by expressing logic as mathematical functions.
+    </p>
+
+    <h3>Key Characteristics of FP:</h3>
+    <ul>
+      <li><strong>Puer Functions:</strong> Functions that always produce the same output for the same input and have no side effects.</li>
+      <li><strong>Immutability:</strong> Data is never modified after it’s created.</li>
+      <li><strong>First-Class and Higher-Order Functions:</strong> Functions are treated as values and can be passed as arguments or returned from other functions.</li>
+      <li><strong>Declarative Style:</strong> Code describes what should happen, not how it should happen.</li>
+    </ul>
+  </section>
+
+  <!-- 2. Functional Programming Principles and Advantages -->
+  <section id="principles-advantages">
     <h2>2. Functional Programming Principles and Advantages</h2>
-    
-    <h3>Principles:</h3>
+
+    <h3>Principles of FP:</h3>
+    <ol>
+      <li><strong>Pure Functions:</strong> Avoid side effects and rely only on inputs to produce outputs.</li>
+      <li><strong>Immutability:</strong> Data is never changed; instead, new data is created.</li>
+      <li><strong>Function Composition:</strong> Combining simple functions to build complex ones.</li>
+      <li><strong>Declarative Code:</strong> Focus on the "what" rather than the "how."</li>
+    </ol>
+
+    <h3>Advantages of FP:</h3>
     <ul>
-      <li><strong>Pure Functions</strong>: The output of a function depends only on its input and does not cause any observable side effects (like modifying a variable outside the function).</li>
-      <li><strong>First-class Functions</strong>: Functions can be passed around as values, just like other types (e.g., numbers, strings).</li>
-      <li><strong>Immutability</strong>: Data cannot be changed after it’s created. Instead, new data is created from the existing data.</li>
+      <li><strong>Predictability:</strong> Pure functions and immutability make code easier to reason about.</li>
+      <li><strong>Concurrency:</strong> Immutable data structures are inherently thread-safe.</li>
+      <li><strong>Reusability:</strong> Small, pure functions can be reused across the codebase.</li>
+      <li><strong>Debugging:</strong> Fewer side effects mean fewer bugs.</li>
     </ul>
-    
-    <h3>Advantages:</h3>
-    <ul>
-      <li><strong>Predictable</strong>: Pure functions always return the same result for the same input, making your code more predictable.</li>
-      <li><strong>Reusability</strong>: Because functions are isolated and don’t rely on external state, they can be reused in many different places.</li>
-      <li><strong>Easier Debugging</strong>: Since there are no side effects, you don’t have to track down changes in the program’s state.</li>
-      <li><strong>Testability</strong>: Pure functions are easier to test because you don't have to worry about external influences affecting the result.</li>
-    </ul>
-  
-    <hr>
-  
-    <h2>3. Comparing Functional Programming with Imperative and Object-Oriented Programming in JavaScript and Python</h2>
-    
+  </section>
+
+  <!-- 3. Comparing Functional Programming with Imperative and Object-Oriented Programming -->
+  <section id="comparison">
+    <h2>3. Comparing Functional Programming with Imperative and Object-Oriented Programming</h2>
+
     <h3>Imperative Programming:</h3>
-    <ul>
-      <li>Focuses on <strong>how</strong> to do something, with step-by-step instructions.</li>
-      <li>Uses <strong>mutable</strong> state and control structures like loops (e.g., for, while).</li>
-    </ul>
-  
-    <h3>Object-Oriented Programming (OOP):</h3>
-    <ul>
-      <li>Focuses on organizing code around objects and classes.</li>
-      <li>Encourages <strong>mutating</strong> data, which is stored in objects, and using methods to modify that data.</li>
-    </ul>
-  
-    <h3>Functional Programming:</h3>
-    <ul>
-      <li>Focuses on <strong>what</strong> needs to be done rather than <strong>how</strong>.</li>
-      <li>Uses <strong>pure functions</strong> and avoids changing state (immutable data).</li>
-    </ul>
-  
-    <hr>
-  
-    <h2>4. Functional Programming Paradigms</h2>
-    <ul>
-      <li><strong>Pure Functions</strong>: Functions that produce no side effects and return the same result for the same input.</li>
-      <li><strong>First-class and Higher-order Functions</strong>: Functions that can be passed around as arguments or returned as results from other functions.</li>
-      <li><strong>Immutability</strong>: Data structures are immutable, meaning once they are created, they cannot be modified.</li>
-      <li><strong>Recursion</strong>: Instead of using loops, FP uses recursion to iterate or repeat tasks.</li>
-    </ul>
+    <p>
+      Imperative programming focuses on <strong>how to do things</strong> using statements that change the program’s state. It works with loops and conditional structures.
+    </p>
 
-    <hr>
-    
-    <h2>5. Example of a Pure Function</h2>
-    
-    <pre>
-      <code>
-        function add(a, b) {{'{'}}
-          return a + b;
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: Imperative
+        let numbers = [1, 2, 3];
+        for (let i = 0; i < numbers.length; i++) {{'{'}}
+          numbers[i] = numbers[i] * 2;
         {{'}'}}
-      </code>
-    </pre>
-    
-    <p>Pure functions always return the same output for the same input.</p>
+        console.log(numbers); // Output: [2, 4, 6]
+        </code>
+      </pre>
+    </div>
 
+    <h3>Object-Oriented Programming (OOP):</h3>
+    <p>
+      Object-Oriented Programming focuses on <strong>objects</strong> and <strong>methods</strong> that operate on data.
+    </p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: OOP
+        class Calculator {{'{'}}
+          add(a, b) {{'{'}}
+            return a + b;
+          {{'}'}}
+        {{'}'}}
+        const calc = new Calculator();
+        console.log(calc.add(2, 3)); // Output: 5
+        </code>
+      </pre>
+    </div>
+
+    <h3>Functional Programming:</h3>
+    <p>
+      Functional programming focuses on <strong>what to do</strong> using pure functions and immutable data.
+    </p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: Functional
+        const numbers = [1, 2, 3];
+        const doubled = numbers.map(x => x * 2);
+        console.log(doubled); // Output: [2, 4, 6]
+        </code>
+      </pre>
+    </div>
+  </section>
+
+  <!-- 4. Functional Programming Paradigms -->
+  <section id="paradigms">
+    <h2>4. Functional Programming Paradigms</h2>
+
+    <h3>Pure Functions and Side Effects</h3>
+    <p>
+      A <strong>pure function</strong> always produces the same output for the same input and has no side effects (e.g., modifying global state or I/O operations).
+    </p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: Pure Function
+        const add = (a, b) => a + b;
+        console.log(add(2, 3)); // Output: 5
+        </code>
+      </pre>
+    </div>
+
+    <h3>First-Class Functions</h3>
+    <p>
+      Functions are treated as <strong>first-class citizens</strong>, meaning they can be assigned to variables, passed as arguments, and returned from other functions.
+    </p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: First-Class Function
+        const greet = () => "Hello, World!";
+        console.log(greet()); // Output: Hello, World!
+        </code>
+      </pre>
+    </div>
+
+    <h3>Higher-Order Functions</h3>
+    <p>
+      A <strong>higher-order function</strong> is a function that takes another function as an argument or returns a function.
+    </p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: Higher-Order Function
+        const twice = (f, x) => f(f(x));
+        const addOne = x => x + 1;
+        console.log(twice(addOne, 5)); // Output: 7
+        </code>
+      </pre>
+    </div>
+
+    <h3>Immutability</h3>
+    <p>
+      Data is never modified; instead, new data is created.
+    </p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: Immutability
+        const numbers = [1, 2, 3];
+        const newNumbers = [...numbers, 4]; // Create a new array
+        console.log(newNumbers); // Output: [1, 2, 3, 4]
+        </code>
+      </pre>
+    </div>
+
+    <h3>Referential Transparency</h3>
+    <p>
+      An expression is <strong>referentially transparent</strong> if it can be replaced with its value without changing the program’s behavior.
+    </p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: Referential Transparency
+        const add = (a, b) => a + b;
+        console.log(add(2, 3) === 5); // Output: true
+        </code>
+      </pre>
+    </div>
+  </section>
+
+  <!-- 5. FP in JavaScript vs Python -->
+  <section id="fp-in-javascript-vs-python">
+    <h2>5. FP in JavaScript vs Python</h2>
+
+    <h3>JavaScript's Support for FP:</h3>
+    <p>JavaScript supports FP features like first-class functions, closures, and arrow functions.</p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // JavaScript: Arrow Function
+        const square = x => x * x;
+        console.log(square(5)); // Output: 25
+        </code>
+      </pre>
+    </div>
+
+    <h3>Python's Support for FP:</h3>
+    <p>Python supports FP with features like lambdas, map, filter, and functools.</p>
+
+    <div class="code-block">
+      <pre>
+        <code>
+        // Python: Lambda and map
+        numbers = [1, 2, 3]
+        squared = list(map(lambda x: x * x, numbers))
+        print(squared)  # Output: [1, 4, 9]
+        </code>
+      </pre>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section id="summary">
+    <h2>Summary</h2>
+    <p>Functional Programming focuses on <strong>pure functions</strong>, <strong>immutability</strong>, and <strong>declarative code</strong>.</p>
+    <p>It contrasts with imperative and object-oriented programming by emphasizing <strong>what to do</strong> rather than <strong>how to do it</strong>.</p>
+    <p>JavaScript and Python both support FP with features like <strong>first-class functions</strong>, <strong>higher-order functions</strong>, and <strong>immutability</strong>.</p>
+  </section>
 </div>

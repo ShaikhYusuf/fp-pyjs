@@ -1,0 +1,274 @@
+
+<!-- lesson5.component.html -->
+
+<div class="lesson">
+    <h1>Lesson 5: Functional Programming in Practice</h1>
+  
+    <section>
+      <h2>1. Functional Programming in JavaScript</h2>
+  
+      <h3>Writing Pure Functions and Higher-Order Functions in JS</h3>
+  
+      <h4>Pure Functions</h4>
+      <p><strong>What is a Pure Function?</strong></p>
+      <ul>
+        <li>A pure function is a function that:</li>
+        <ul>
+          <li>Always returns the same output for the same input (deterministic).</li>
+          <li>Has no side effects (doesn't modify external state or perform I/O operations).</li>
+        </ul>
+      </ul>
+      <p>Pure functions are predictable and easier to test and debug.</p>
+  
+      <h5>Example of a Pure Function:</h5>
+      <pre>
+        <code>
+          // Pure function
+          const add = (a, b) => a + b;
+          console.log(add(2, 3)); // Always returns 5
+        </code>
+      </pre>
+  
+      <p><strong>Explanation:</strong> The `add` function takes two inputs (`a` and `b`) and returns their sum. It doesn’t depend on or modify any external state, so it’s pure.</p>
+  
+      <h5>Example of an Impure Function:</h5>
+      <pre>
+        <code>
+          let counter = 0;
+          const increment = () => {{'{'}}
+            counter++; // Modifies external state
+            return counter;
+          {{'}'}};
+          console.log(increment()); // Output depends on external state
+        </code>
+      </pre>
+      <p><strong>Explanation:</strong> The `increment` function modifies the `counter` variable, which is outside its scope. This makes it impure.</p>
+  
+      <h4>Higher-Order Functions</h4>
+      <p><strong>What is a Higher-Order Function?</strong></p>
+      <ul>
+        <li>A higher-order function is a function that:</li>
+        <ul>
+          <li>Takes one or more functions as arguments.</li>
+          <li>Returns a function as its result.</li>
+        </ul>
+      </ul>
+      <p>Higher-order functions are a key concept in functional programming.</p>
+  
+      <h5>Example of a Higher-Order Function:</h5>
+      <pre>
+        <code>
+          // Higher-order function
+          const multiplyBy = (factor) => (number) => number * factor;
+          const double = multiplyBy(2);
+          console.log(double(5)); // 10
+        </code>
+      </pre>
+      <p><strong>Explanation:</strong> `multiplyBy` is a higher-order function because it returns another function. `double` is the result of calling `multiplyBy(2)`, and it multiplies any number by 2.</p>
+  
+      <h3>Using Libraries like Ramda and Lodash FP</h3>
+  
+      <h4>Ramda</h4>
+      <p><strong>What is Ramda?</strong></p>
+      <p>Ramda is a functional programming library for JavaScript. It provides utility functions for working with data in a functional style.</p>
+  
+      <h5>Example of Ramda:</h5>
+      <pre>
+        <code>
+          import R from "ramda";
+  
+          const add = R.add;
+          const multiply = R.multiply;
+  
+          const result = R.pipe(add(2), multiply(3))(5); // (5 + 2) * 3 = 21
+          console.log(result);
+        </code>
+      </pre>
+  
+      <h4>Lodash FP</h4>
+      <p><strong>What is Lodash FP?</strong></p>
+      <p>Lodash FP is a functional programming version of Lodash. It provides immutable and auto-curried functions.</p>
+  
+      <h5>Example of Lodash FP:</h5>
+      <pre>
+        <code>
+          import _ from "lodash/fp";
+  
+          const add = _.add;
+          const multiply = _.multiply;
+  
+          const result = _.pipe([add(2), multiply(3)])(5); // (5 + 2) * 3 = 21
+          console.log(result);
+        </code>
+      </pre>
+  
+      <h3>Functional Reactive Programming (FRP) in JavaScript with RxJS</h3>
+  
+      <h4>What is RxJS?</h4>
+      <p>RxJS (Reactive Extensions for JavaScript) is a library for reactive programming using <strong>observables</strong>. It allows you to work with asynchronous data streams.</p>
+  
+      <h5>Example of RxJS:</h5>
+      <pre>
+        <code>
+          import {{'{'}} fromEvent {{'}'}} from "rxjs";
+          import {{'{'}} map {{'}'}} from "rxjs/operators";
+  
+          const button = document.querySelector("button");
+          const clicks = fromEvent(button, "click");
+  
+          clicks
+            .pipe(map((event) => event.clientX)) // Transform event to clientX
+            .subscribe((x) => console.log(`Clicked at X: ${{'{'}}x{{'}'}}`));
+        </code>
+      </pre>
+  
+      <h3>2. Functional Programming in Python</h3>
+  
+      <h4>Writing Pure Functions and Higher-Order Functions in Python</h4>
+  
+      <h5>Pure Functions</h5>
+      <p><strong>Example of a Pure Function:</strong></p>
+      <pre>
+        <code>
+          # Pure function
+          def add(a, b):
+              return a + b
+  
+          print(add(2, 3))  # Always returns 5
+        </code>
+      </pre>
+  
+      <h4>Higher-Order Functions</h4>
+      <p><strong>Example of a Higher-Order Function:</strong></p>
+      <pre>
+        <code>
+          # Higher-order function
+          def multiply_by(factor):
+              def multiply(number):
+                  return number * factor
+              return multiply
+  
+          double = multiply_by(2)
+          print(double(5))  # 10
+        </code>
+      </pre>
+  
+      <h3>Python's <code>functools</code> Module</h3>
+  
+      <h4><code>reduce</code></h4>
+      <p><strong>What is <code>reduce</code>?</strong></p>
+      <p><code>reduce</code> applies a function cumulatively to items in a sequence, reducing it to a single value.</p>
+  
+      <h5>Example of <code>reduce</code>:</h5>
+      <pre>
+        <code>
+          from functools import reduce
+  
+          numbers = [1, 2, 3, 4]
+          total = reduce(lambda acc, x: acc + x, numbers)
+          print(total)  # 10
+        </code>
+      </pre>
+  
+      <h4><code>partial</code></h4>
+      <p><strong>What is <code>partial</code>?</strong></p>
+      <p><code>partial</code> fixes some arguments of a function, creating a new function.</p>
+  
+      <h5>Example of <code>partial</code>:</h5>
+      <pre>
+        <code>
+          from functools import partial
+  
+          def power(base, exponent):
+              return base ** exponent
+  
+          square = partial(power, exponent=2)
+          print(square(5))  # 25
+        </code>
+      </pre>
+  
+      <h4><code>lru_cache</code></h4>
+      <p><strong>What is <code>lru_cache</code>?</strong></p>
+      <p><code>lru_cache</code> is a decorator that memoizes function results to optimize performance.</p>
+  
+      <h5>Example of <code>lru_cache</code>:</h5>
+      <pre>
+        <code>
+          from functools import lru_cache
+  
+          &#64;lru_cache
+          def fibonacci(n):
+              if n < 2:
+                  return n
+              return fibonacci(n - 1) + fibonacci(n - 2)
+  
+          print(fibonacci(10))  # 55
+        </code>
+      </pre>
+  
+      <h3>3. Testing in Functional Programming</h3>
+  
+      <h4>Unit Testing Functional Code in JavaScript</h4>
+      <p><strong>Using Mocha:</strong></p>
+      <pre>
+        <code>
+          const assert = require("assert");
+  
+          const add = (a, b) => a + b;
+  
+          describe("add", () => {{'{'}}
+            it("should return the sum of two numbers", () => {{'{'}}
+              assert.strictEqual(add(2, 3), 5);
+            {{'}'}});
+          {{'}'}});
+        </code>
+      </pre>
+  
+      <h4>Unit Testing Functional Code in Python</h4>
+      <p><strong>Using <code>pytest</code>:</strong></p>
+      <pre>
+        <code>
+          def add(a, b):
+              return a + b
+  
+          def test_add():
+              assert add(2, 3) == 5
+        </code>
+      </pre>
+  
+      <h3>4. Design Patterns in FP</h3>
+  
+      <h4>JavaScript FP Design Patterns</h4>
+      <p><strong>Function Composition:</strong></p>
+      <pre>
+        <code>
+          const compose = (f, g) => (x) => f(g(x));
+          const add = (x) => x + 2;
+          const multiply = (x) => x * 3;
+  
+          const result = compose(multiply, add)(5); // (5 + 2) * 3 = 21
+          console.log(result);
+        </code>
+      </pre>
+  
+      <h4>Python FP Design Patterns</h4>
+      <p><strong>Strategy Pattern:</strong></p>
+      <pre>
+        <code>
+          def strategy_add(a, b):
+              return a + b
+  
+          def strategy_multiply(a, b):
+              return a * b
+  
+          def execute_strategy(strategy, a, b):
+              return strategy(a, b)
+  
+          print(execute_strategy(strategy_add, 2, 3))  # 5
+          print(execute_strategy(strategy_multiply, 2, 3))  # 6
+        </code>
+      </pre>
+  
+    </section>
+  </div>
+  

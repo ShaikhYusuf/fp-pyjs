@@ -1,0 +1,250 @@
+<div class="container">
+    <h1>Lesson 6: Real-World Applications and Projects - Simplified</h1>
+
+    <section>
+        <h2>1. Building Web Applications using FP</h2>
+        <p>
+            When we build web applications, we can use Functional Programming (FP) to organize the code in a clean and
+            easy-to-understand way. FP focuses on writing pure functions and making sure we don’t change things (like
+            variables or states) unexpectedly.
+        </p>
+        <ul>
+            <li><strong>Pure Functions:</strong> A pure function is a function that always produces the same output for
+                the same input and doesn’t cause any side effects (like changing a variable).</li>
+            <li><strong>Immutability:</strong> In FP, once something is created, it can’t be changed. You create a new
+                value instead of modifying the old one.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. JavaScript: Functional Web Development using React (Functional Components)</h2>
+        <p>
+            React is a tool we use to build websites. In React, we can create functional components, which are like
+            simple, self-contained building blocks for a website. Functional Components are simply functions that take
+            inputs (called props) and return some output (like a part of a webpage).
+        </p>
+        <p>
+            These components are pure functions because they always return the same thing when given the same input,
+            making the code easier to debug and understand.
+        </p>
+        <pre>
+            <code>
+              import React, &#123; useState &#125; from 'react';
+          
+              function Counter() &#123;
+                const [count, setCount] = useState(0);
+          
+                return (
+                  &lt;div&gt;
+                    &lt;p&gt;Count: &#123;count&#125;&lt;/p&gt;
+                    &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;Increment&lt;/button&gt;
+                    &lt;button onClick=&#123;() =&gt; setCount(count - 1)&#125;&gt;Decrement&lt;/button&gt;
+                  &lt;/div&gt;
+                );
+              &#125;
+          
+              export default Counter;
+            </code>
+          </pre>
+          
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>The useState(0) is used to create a count variable with an initial value of 0.</li>
+            <li>The setCount() function is used to update the count when the buttons are clicked.</li>
+            <li>This is a pure function because no matter how many times you click the button, it will always give you
+                the same result when the count is the same.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Python: Functional Web Frameworks (e.g., Flask, FastAPI)</h2>
+        <p>
+            Flask and FastAPI are tools in Python that let you build web apps. When using FP in web development, we
+            treat our web app logic as pure functions, just like in React.
+        </p>
+        <pre>
+        <code>
+          from fastapi import FastAPI
+  
+          app = FastAPI()
+  
+          &#64;app.get("/")
+          def read_root():
+            return {{'{'}}"message": "Hello, World!"{{'}'}}
+        </code>
+      </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>This is a very simple web application that just responds with a message: "Hello, World!" when you visit
+                the root URL.</li>
+            <li>The function read_root() is pure because it always returns the same result (the message) when called.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Working with Databases</h2>
+        <p>
+            When working with databases, FP helps you organize how you retrieve and store data in a predictable way.
+            Instead of directly changing data, you use pure functions that return new data without modifying the
+            original.
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Functional Programming in JavaScript for Working with Databases (e.g., Sequelize, Mongoose)</h2>
+        <p>
+            In JavaScript, libraries like Sequelize (for SQL databases) and Mongoose (for MongoDB) help us interact with
+            databases. In FP, we write code that is predictable and doesn't change anything unexpectedly.
+        </p>
+        <pre>
+        <code>
+          const mongoose = require('mongoose');
+  
+          const userSchema = new mongoose.Schema({{'{'}}
+            name: String,
+            email: String,
+          {{'}'}});
+  
+          const User = mongoose.model('User', userSchema);
+  
+          async function createUser(name, email) {{'{'}}
+            const newUser = new User({{'{'}} name, email {{'}'}});
+            await newUser.save();
+            return newUser;
+          {{'}'}}
+        </code>
+      </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>The createUser() function is a pure function because it only creates a new user and returns the result.
+            </li>
+            <li>It doesn’t change anything unexpectedly, and it doesn't rely on external state.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Python’s Functional Approach to Interacting with Databases (e.g., SQLAlchemy with FP Techniques)</h2>
+        <pre>
+        <code>
+          from sqlalchemy import create_engine, Column, Integer, String
+          from sqlalchemy.ext.declarative import declarative_base
+          from sqlalchemy.orm import sessionmaker
+  
+          Base = declarative_base()
+  
+          class User(Base):
+            __tablename__ = 'users'
+            id = Column(Integer, primary_key=True)
+            name = Column(String)
+            email = Column(String)
+  
+          engine = create_engine('sqlite:///:memory:')
+          Base.metadata.create_all(engine)
+  
+          Session = sessionmaker(bind=engine)
+          session = Session()
+  
+          def create_user(name, email):
+            new_user = User(name=name, email=email)
+            session.add(new_user)
+            session.commit()
+            return new_user
+        </code>
+      </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>The create_user() function is a pure function because it doesn't change any global state and simply
+                creates a new user.</li>
+            <li>It adds the user to the database but doesn’t change anything outside of the database.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>7. Machine Learning and Data Science with FP</h2>
+        <p>FP can also be applied in data science to process and analyze data in a clean and predictable way. You can
+            use libraries like Pandas and NumPy in Python for this purpose.</p>
+    </section>
+
+    <section>
+        <h2>8. Functional Programming Libraries in Python for Data Science (e.g., Pandas, NumPy, PyFunctional)</h2>
+        <p>
+            Pandas and NumPy are libraries in Python that help us work with large datasets and perform mathematical
+            operations. We can apply FP techniques here too, especially immutability and pure functions.
+        </p>
+        <pre>
+        <code>
+          from pyfunctional import PyFunctional
+  
+          data = [1, 2, 3, 4, 5]
+  
+          result = PyFunctional.from_iterable(data).map(lambda x: x ** 2).to_list()
+          print(result)
+        </code>
+      </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>We used a function called map() to apply a function that squares each number in the list.</li>
+            <li>Notice that the original list doesn’t change — instead, we create a new list with the squared numbers,
+                following the immutable principle of FP.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>9. Functional Systems Programming</h2>
+        <p>Systems programming means writing code that interacts closely with hardware or manages resources like memory.
+            In FP, we write this kind of code using pure functions, making it predictable and easy to debug.</p>
+    </section>
+
+    <section>
+        <h2>10. Systems Programming with Functional Paradigms in JavaScript (Node.js)</h2>
+        <pre>
+        <code>
+          const fs = require('fs');
+  
+          const readFileContent = (filename) => {{'{'}}
+            return new Promise((resolve, reject) => {{'{'}}
+              fs.readFile(filename, 'utf8', (err, data) => {{'{'}}
+                if (err) reject(err);
+                else resolve(data);
+              {{'}'}});
+            {{'}'}});
+          {{'}'}};
+  
+          readFileContent('example.txt').then(content => console.log(content)).catch(err => console.log(err));
+        </code>
+      </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>readFileContent() is a pure function. It just reads the file and returns the data, which can be used or
+                logged.</li>
+            <li>The result is returned as a Promise, ensuring that the code is predictable and can be easily chained.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>11. Systems Programming with Python (using FP for Concurrent Systems)</h2>
+        <pre>
+        <code>
+          import asyncio
+  
+          async def fetch_data():
+            await asyncio.sleep(1)
+            return 42
+  
+          async def main():
+            result = await fetch_data()
+            print(result)
+  
+          asyncio.run(main())
+        </code>
+      </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>The fetch_data() function is a coroutine that simulates fetching data asynchronously.</li>
+            <li>await allows the function to pause, wait for the data, and then continue. This is a functional approach
+                because the program runs predictably without unexpected behavior.</li>
+        </ul>
+    </section>
+</div>

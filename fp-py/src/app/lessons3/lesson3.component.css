@@ -1,175 +1,189 @@
-/* General Styles */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .lesson-container {
-    max-width: 1200px; /* Adjusted width */
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  /* Headings */
-  h2, h3, h6 {
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-  }
-  
-  h2 {
-    font-size: 2.5em;
-    color: #34495e;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #2980b9;
-    padding-bottom: 8px;
-    position: relative;
-  }
-  
-  h2:hover {
-    color: #2980b9; /* Change color on hover */
-    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add text shadow effect */
-  }
-  
-  h3 {
-    font-size: 1.8em;
-    color: #2980b9;
-    margin-top: 25px;
-    margin-bottom: 12px;
-    position: relative;
-  }
-  
-  h3:hover {
-    color: #16a085; /* Change color on hover */
-    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add text shadow effect */
-  }
-  
-  h6 {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #7f8c8d;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  h6:hover {
-    color: #2980b9; /* Change color on hover */
-    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add text shadow effect */
-  }
-  
-  /* Lists */
-  ul {
-    margin-left: 30px;
-    margin-bottom: 30px;
-  }
-  
-  ul li {
-    font-size: 1.1em;
-    margin-bottom: 12px;
-    line-height: 1.8;
-    color: #555;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  ul li:hover {
-    color: #2980b9; /* Change color on hover */
-    transform: scale(1.05); /* Slight zoom effect on hover */
-  }
-  
-  /* Code Styling */
-  pre {
-    background-color: #ecf0f1;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container */
+.lesson {
+  margin-top: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Section */
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #2980b9;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #2980b9;
+  padding-bottom: 5px;
+}
+
+h3, h4, h5 {
+  color: #34495e;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: bold;
+  color: #2980b9;
+}
+
+/* Code and Preformatted Text */
+pre {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 10px 0;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #ecf0f1;
+  padding: 0 5px;
+  border-radius: 3px;
+  color: #2c3e50;
+}
+
+/* List Styles */
+ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+li {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+  color: #2980b9;
+  transform: translateX(5px);
+}
+
+/* Example Block */
+.example {
+  margin-bottom: 20px;
+}
+
+.example h5 {
+  font-size: 1.5rem;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+/* Summary Section */
+#summary ul {
+  list-style-type: disc;
+  margin-left: 40px;
+}
+
+#summary li {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lesson {
     padding: 20px;
-    border-radius: 8px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
-    color: #2c3e50;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
   }
-  
-  pre:hover {
-    background-color: #bdc3c7; /* Darker background on hover */
+
+  h1 {
+    font-size: 2rem;
   }
-  
-  code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
-    color: #e74c3c;
+
+  h2 {
+    font-size: 1.75rem;
   }
-  
-  /* Horizontal Line */
-  hr {
-    border: 1px solid #bdc3c7;
-    margin: 30px 0;
-    transition: border-color 0.3s ease;
+
+  h3, h4, h5 {
+    font-size: 1.25rem;
   }
-  
-  hr:hover {
-    border-color: #2980b9; /* Change line color on hover */
-  }
-  
-  /* Paragraphs and Spacing */
+
   p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    color: #555;
+    font-size: 1rem;
   }
-  
-  /* Links and Interactive Elements */
-  a {
-    color: #2980b9;
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+  code {
+    font-size: 0.9rem;
   }
-  
-  a:hover {
-    text-decoration: underline;
-    color: #16a085; /* Green color on hover */
+
+  .example h5 {
+    font-size: 1.2rem;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .lesson-container {
-        padding: 25px;
-    }
-  
-    h2 {
-        font-size: 2.2em;
-    }
-  
-    h3 {
-        font-size: 1.6em;
-    }
-  
-    h6 {
-        font-size: 1.1em;
-    }
+
+  ul {
+    margin-left: 15px;
   }
-  
-  @media (max-width: 768px) {
-    .lesson-container {
-        padding: 20px;
-    }
-  
-    h2 {
-        font-size: 1.8em;
-    }
-  
-    h3 {
-        font-size: 1.4em;
-    }
-  
-    h6 {
-        font-size: 1em;
-    }
+}
+
+@media (max-width: 480px) {
+  .lesson {
+    padding: 15px;
   }
-  
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3, h4, h5 {
+    font-size: 1rem;
+  }
+
+  .example h5 {
+    font-size: 1rem;
+  }
+
+  ul {
+    margin-left: 10px;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+}

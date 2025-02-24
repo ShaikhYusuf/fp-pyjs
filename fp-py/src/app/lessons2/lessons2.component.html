@@ -1,99 +1,228 @@
-<!-- lesson2.component.html -->
 <div class="lesson">
-  <h2>Lesson 2: Basic Functional Programming Concepts</h2>
-  
-  <h3>1. First-class and Higher-order Functions</h3>
-  
-  <h4>First-class Functions:</h4>
-  <p>A first-class function is a function that can be treated like any other value.</p>
-  <ul>
-    <li>It can be assigned to a variable.</li>
-    <li>It can be passed as an argument to another function.</li>
-    <li>It can be returned from a function.</li>
-  </ul>
-  
-  <h4>Higher-order Functions (HOFs):</h4>
-  <p>A higher-order function is a function that:</p>
-  <ul>
-    <li>Takes one or more functions as parameters.</li>
-    <li>Returns another function as a result.</li>
-  </ul>
-  
-  <pre>
-    <code>
-      const greet = function(name) &#123;
-        return `Hello, $&#123;name&#125;`;
-      &#125;;
-      console.log(greet("Alice")); 
-      
-      function applyFunction(fn, value) &#123;
-        return fn(value);
-      &#125;
-      console.log(applyFunction(greet, "Bob"));
-    </code>
-  </pre>
-  
-  <h3>2. Functions as Arguments and Return Values</h3>
-  <h4>JavaScript Example: Function as Argument</h4>
-  <pre>
-    <code>
-      function add(x, y) &#123;
-        return x + y;
-      &#125;
+  <h2 class="lesson-title">Lesson 2: Basic Functional Programming Concepts</h2>
 
-      function operate(fn, a, b) &#123;
-        return fn(a, b);  
-      &#125;
+  <div class="section">
+    <h3 class="section-title">1. First-Class and Higher-Order Functions</h3>
+    <p class="section-description">
+      In functional programming, functions are treated as <strong>first-class citizens</strong>, meaning they can be:
+    </p>
+    <ul>
+      <li>Assigned to variables.</li>
+      <li>Passed as arguments to other functions.</li>
+      <li>Returned from other functions.</li>
+    </ul>
 
-      console.log(operate(add, 5, 3));
-    </code>
-  </pre>
-  
-  <h3>3. Immutability and Data Structures</h3>
-  <h4>JavaScript Example: Object.freeze()</h4>
-  <pre>
-    <code>
-      const person = &#123; name: "Alice", age: 25 &#125;;
-      Object.freeze(person);
-      person.age = 26;  
-      console.log(person.age); 
-    </code>
-  </pre>
-  
-  <h3>4. Pure Functions</h3>
-  <h4>Pure Function Example:</h4>
-  <pre>
-    <code>
-      function add(a, b) &#123;
-        return a + b;
-      &#125;
-      console.log(add(2, 3));
-    </code>
-  </pre>
 
-  <h3>5. Lambda Expressions and Anonymous Functions</h3>
-  <h4>JavaScript Arrow Functions:</h4>
-  <pre>
-    <code>
-      const add = (a, b) => a + b;
-      console.log(add(2, 3));
-    </code>
-  </pre>
+    <h4 class="example-title">JavaScript Examples:</h4>
+    <div class="example">
+      <h5>1. Function as an Argument</h5>
+      <pre><code class="language-javascript">// Function as an argument
+const greet = (name) => \`Hello, \${{'{'}}name{{'}'}}!\`;
+const greetUser = (greetFn, name) => greetFn(name);
 
-  <h3>6. Map, Filter, and Reduce</h3>
-  <h4>JavaScript Example:</h4>
-  <pre>
-    <code>
-      const numbers = [1, 2, 3, 4, 5];
+console.log(greetUser(greet, "Alice")); // Output: Hello, Alice!</code></pre>
+    </div>
 
-      const squares = numbers.map(x => x * x);
-      console.log(squares);
+    <div class="example">
+      <h5>2. Function as a Return Value</h5>
+      <pre><code class="language-javascript">// Function as a return value
+const createGreeter = (greeting) => (name) => \`\${{'{'}}greeting{{'}'}}, \${{'{'}}name{{'}'}}!\`;
+const sayHello = createGreeter("Hello");
+console.log(sayHello("Bob")); // Output: Hello, Bob!</code></pre>
+    </div>
 
-      const evens = numbers.filter(x => x % 2 === 0);
-      console.log(evens);
+    <h4 class="example-title">Python Examples:</h4>
+    <div class="example">
+      <h5>1. Function as an Argument</h5>
+      <pre><code class="language-python"># Function as an argument
+def greet(name):
+    return f"Hello, {{'{'}}name{{'}'}}!"
 
-      const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-      console.log(sum);
-    </code>
-  </pre>
+def greet_user(greet_fn, name):
+    return greet_fn(name)
+
+print(greet_user(greet, "Alice"))  # Output: Hello, Alice!</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>2. Function as a Return Value</h5>
+      <pre><code class="language-python"># Function as a return value
+def create_greeter(greeting):
+    def greeter(name):
+        return f"{{'{'}}greeting{{'}'}}, {{'{'}}name{{'}'}}!"
+    return greeter
+
+say_hello = create_greeter("Hello")
+print(say_hello("Bob"))  # Output: Hello, Bob!</code></pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">2. Immutability and Data Structures</h3>
+    <p class="section-description">Immutability means that once data is created, it cannot be changed. Instead, new data
+      is created when modifications are needed.</p>
+
+    <h4 class="example-title">JavaScript Examples:</h4>
+    <div class="example">
+      <h5>1. Using <code>Object.freeze()</code></h5>
+      <pre><code class="language-javascript">// Using Object.freeze()
+const person = Object.freeze({{'{'}} name: "Alice", age: 25 {{'}'}});
+// person.age = 30; // Error: Cannot assign to read-only property 'age'
+
+console.log(person); // Output: {{'{'}} name: "Alice", age: 25 {{'}'}}</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>2. Using Immutable.js</h5>
+      <pre><code class="language-javascript">const {{'{'}} List {{'}'}} = require("immutable");
+
+const numbers = List([1, 2, 3]);
+const newNumbers = numbers.push(4); // Creates a new list
+console.log(newNumbers.toJS()); // Output: [1, 2, 3, 4]</code></pre>
+    </div>
+
+    <h4 class="example-title">Python Examples:</h4>
+    <div class="example">
+      <h5>1. Using Tuples</h5>
+      <pre><code class="language-python"># Tuples are immutable
+numbers = (1, 2, 3)
+# numbers[0] = 10  # Error: 'tuple' object does not support item assignment
+print(numbers)  # Output: (1, 2, 3)</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>2. Using <code>frozenset</code></h5>
+      <pre><code class="language-python"># frozenset is immutable
+unique_numbers = frozenset({{'{'}}1, 2, 3{{'}'}})
+# unique_numbers.add(4)  # Error: 'frozenset' object has no attribute 'add'
+print(unique_numbers)  # Output: frozenset({{'{'}}1, 2, 3{{'}'}})</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>3. Immutability in Lists</h5>
+      <pre><code class="language-python"># Creating a new list instead of modifying the original
+numbers = [1, 2, 3]
+new_numbers = numbers + [4]  # Creates a new list
+print(new_numbers)  # Output: [1, 2, 3, 4]</code></pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">3. Pure Functions</h3>
+    <p class="section-description">A <strong>pure function</strong> always returns the same output for the same input
+      and has no side effects.</p>
+
+    <h4 class="example-title">JavaScript Examples:</h4>
+    <div class="example">
+      <h5>1. Pure Function</h5>
+      <pre><code class="language-javascript">const add = (a, b) => a + b;
+console.log(add(2, 3)); // Output: 5</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>2. Impure Function</h5>
+      <pre><code class="language-javascript">let total = 0;
+const addToTotal = (x) => (total += x);
+addToTotal(5);
+console.log(total); // Output: 5 (side effect: modifies external state)</code></pre>
+    </div>
+
+    <h4 class="example-title">Python Examples:</h4>
+    <div class="example">
+      <h5>1. Pure Function</h5>
+      <pre><code class="language-python">def add(a, b):
+    return a + b
+
+print(add(2, 3))  # Output: 5</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>2. Impure Function</h5>
+      <pre><code class="language-python">total = 0
+def add_to_total(x):
+    global total
+    total += x
+    return total
+
+add_to_total(5)
+print(total)  # Output: 5 (side effect: modifies external state)</code></pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">4. Lambda Expressions and Anonymous Functions</h3>
+
+    <h4 class="example-title">JavaScript Examples:</h4>
+    <div class="example">
+      <h5>1. Arrow Functions</h5>
+      <pre><code class="language-javascript">const square = (x) => x * x;
+console.log(square(5)); // Output: 25</code></pre>
+    </div>
+
+    <h4 class="example-title">Python Examples:</h4>
+    <div class="example">
+      <h5>1. Lambda Functions</h5>
+      <pre><code class="language-python">square = lambda x: x * x
+print(square(5))  # Output: 25</code></pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title">5. Map, Filter, and Reduce</h3>
+
+    <h4 class="example-title">JavaScript Examples:</h4>
+    <div class="example">
+      <h5>1. Map</h5>
+      <pre><code class="language-javascript">const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(x => x * 2);
+console.log(doubled); // Output: [2, 4, 6, 8]</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>2. Filter</h5>
+      <pre><code class="language-javascript">const evens = numbers.filter(x => x % 2 === 0);
+console.log(evens); // Output: [2, 4]</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>3. Reduce</h5>
+      <pre><code class="language-javascript">const sum = numbers.reduce((acc, x) => acc + x, 0);
+console.log(sum); // Output: 10</code></pre>
+    </div>
+
+    <h4 class="example-title">Python Examples:</h4>
+    <div class="example">
+      <h5>1. Map</h5>
+      <pre><code class="language-python">numbers = [1, 2, 3, 4]
+doubled = list(map(lambda x: x * 2, numbers))
+print(doubled)  # Output: [2, 4, 6, 8]</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>2. Filter</h5>
+      <pre><code class="language-python">evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)  # Output: [2, 4]</code></pre>
+    </div>
+
+    <div class="example">
+      <h5>3. Reduce</h5>
+      <pre><code class="language-python">from functools import reduce
+
+sum = reduce(lambda acc, x: acc + x, numbers, 0)
+print(sum)  # Output: 10</code></pre>
+    </div>
+  </div>
+
+  <div class="section summary">
+    <h3 class="section-title">Summary</h3>
+    <ul>
+      <li><strong>First-class and higher-order functions</strong> allow functions to be treated as values.</li>
+      <li><strong>Immutability</strong> ensures data is never modified, promoting predictability.</li>
+      <li><strong>Pure functions</strong> avoid side effects and make code easier to reason about.</li>
+      <li><strong>Lambda expressions</strong> provide concise syntax for small, anonymous functions.</li>
+      <li><strong>Map, filter, and reduce</strong> are powerful tools for transforming and processing data.</li>
+    </ul>
+    <p>This lesson builds a strong foundation in functional programming concepts. In the next lesson, we’ll explore more
+      advanced topics!</p>
+  </div>
 </div>
