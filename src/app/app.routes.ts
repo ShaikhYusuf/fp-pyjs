@@ -14,6 +14,7 @@ import { Lessons9Component } from './lessons9/lessons9.component';
 import { Lessons10Component } from './lessons10/lessons10.component';
 
 export const routes: Routes = [
+<<<<<<< HEAD:fp-py/src/app/app.routes.ts
     { path: 'home', component: HomeComponent },
     { path: 'lessons', component: LessonsComponent },
     { path: 'les1', component: Lessons1Component },
@@ -28,4 +29,14 @@ export const routes: Routes = [
     { path: 'les10', component: Lessons10Component }, 
     { path: 'quiz', component: QuizComponent },
 
+=======
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'lessons', component: LessonsComponent },
+  { path: 'les1', component: Lessons1Component },
+  { path: 'les2', component: Lessons2Component },
+  { path: 'les3', component: Lesson3Component },
+  { path: 'les4', component: Lesson4Component },
+  { path: 'quiz', component: QuizComponent },
+>>>>>>> 397ae06703f16de2a915e7254040bb2db9612ce2:src/app/app.routes.ts
 ];
