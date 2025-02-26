@@ -1,0 +1,220 @@
+<div class="lesson">
+    <h1>Lesson 8: Key Functional Programming Libraries in JavaScript and Python</h1>
+  
+    <!-- JavaScript Libraries -->
+    <section>
+      <h2>1. Ramda: A Popular FP Library for JavaScript</h2>
+      <p><strong>What Makes Ramda Special?</strong></p>
+      <ul>
+        <li><strong>Currying by Default:</strong> All functions in Ramda are curried, allowing for partial application and reusability of functions.</li>
+        <li><strong>Immutability:</strong> Ramda returns new data structures instead of modifying the original ones, preventing side effects.</li>
+        <li><strong>Composability:</strong> Functions can be composed in a clean and readable way using Ramda.</li>
+      </ul>
+  
+      <p><strong>Example: Curried Functions and Composition</strong></p>
+      <pre><code>
+  const R = require('ramda');
+  
+  // Curried function to add two numbers
+  const add = (a) => (b) => a + b;
+  
+  const add5 = add(5);  // The function now adds 5 to any number passed to it
+  console.log(add5(3)); // Output: 8
+  
+  // Using Ramda to compose functions
+  const multiplyBy2 = (x) => x * 2;
+  const multiplyAndAdd = R.compose(add5, multiplyBy2);
+  
+  console.log(multiplyAndAdd(3)); // Output: 11 (multiplyBy2(3) = 6, add5(6) = 11)
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>Curried Function:</strong> The add function is curried, so calling add(5) returns a function that takes the next argument and adds 5 to it.</li>
+        <li><strong>Function Composition:</strong> R.compose(add5, multiplyBy2) creates a new function that first multiplies a number by 2, and then adds 5 to it.</li>
+      </ul>
+  
+      <h2>2. Lodash FP: A Functional Version of Lodash</h2>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Currying:</strong> Functions in Lodash FP are curried by default.</li>
+        <li><strong>Immutability:</strong> Like Ramda, data is not mutated; instead, a new transformed copy is returned.</li>
+        <li><strong>Functional Utility Functions:</strong> Lodash FP provides utilities like map, filter, and reduce for functional transformations.</li>
+      </ul>
+  
+      <p><strong>Example: Curried Functions and Transformation</strong></p>
+      <pre><code>
+  const _ = require('lodash/fp');
+  
+  // Curried function to multiply
+  const multiply = (a) => (b) => a * b;
+  
+  const multiplyBy2 = multiply(2);
+  console.log(multiplyBy2(5)); // Output: 10
+  
+  // Using Lodash FP to map over an array
+  const numbers = [1, 2, 3, 4, 5];
+  const doubleNumbers = _.map((x) => x * 2, numbers);
+  
+  console.log(doubleNumbers);  // Output: [2, 4, 6, 8, 10]
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>Currying:</strong> The multiply function is curried, which allows you to create functions like multiplyBy2.</li>
+        <li><strong>Array Transformation:</strong> _.map applies the function to each element in the array, returning a new array without modifying the original.</li>
+      </ul>
+  
+      <h2>3. RxJS: Functional Reactive Programming in JavaScript</h2>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Observables:</strong> RxJS allows you to work with data that changes over time.</li>
+        <li><strong>Operators:</strong> Functions like map, filter, merge, and combineLatest help transform and combine observables.</li>
+        <li><strong>Functional Programming:</strong> RxJS encourages using functional techniques like map, reduce, and filter on streams of data.</li>
+      </ul>
+  
+      <p><strong>Example: Working with Observables</strong></p>
+      <pre><code>
+  const rxjs = require('rxjs');
+  const &#125; map, filter &#123; = require('rxjs/operators');
+  
+  // Create an observable stream of numbers
+  const numbers$ = rxjs.of(1, 2, 3, 4, 5);
+  
+  // Apply functional operators to the stream
+  const doubledNumbers$ = numbers$.pipe(
+    filter(x => x % 2 === 0),  // Keep even numbers
+    map(x => x * 2)            // Double the numbers
+  );
+  
+  doubledNumbers$.subscribe(value => console.log(value)); 
+  // Output: 4, 8
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>Observables:</strong> numbers$ is an observable that emits values over time.</li>
+        <li><strong>Functional Operators:</strong> We use filter to keep only even numbers, and map to double those numbers. The result is an observable that emits 4 and 8.</li>
+      </ul>
+  
+      <h2>4. Folktale: Functional Programming for JavaScript</h2>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Monads:</strong> Monads like Maybe, Either, Task, etc., help handle computations that may fail.</li>
+        <li><strong>Immutability:</strong> Everything in Folktale is immutable by default.</li>
+      </ul>
+  
+      <p><strong>Example: Maybe Monad</strong></p>
+      <pre><code>
+  const &#125; Maybe &#123; = require('folktale/data/maybe');
+  
+  // Example of Maybe monad for safe computation
+  const safeDivide = (a, b) => b === 0 ? Maybe.nothing() : Maybe.of(a / b);
+  
+  safeDivide(10, 2)
+    .map(result => result * 2)
+    .getOrElse('Error!');  // Output: 10
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>Maybe Monad:</strong> The Maybe monad allows safe handling of null or undefined values. If the denominator is 0, it returns Nothing (similar to null), otherwise it performs the division and returns the result.</li>
+        <li><strong>map:</strong> The map function transforms the value inside the Maybe container.</li>
+      </ul>
+    </section>
+  
+    <!-- Python Libraries -->
+    <section>
+      <h2>Python Libraries</h2>
+  
+      <h3>1. toolz: A Library for Functional Programming Tools</h3>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Function Composition:</strong> Functions like pipe and compose allow for chaining operations.</li>
+        <li><strong>Lazy Evaluation:</strong> Process large datasets efficiently using lazy evaluation.</li>
+        <li><strong>Iterable Processing:</strong> Functional tools to work with iterators and sequences.</li>
+      </ul>
+  
+      <p><strong>Example: Function Composition with toolz</strong></p>
+      <pre><code>
+  from toolz import pipe
+  
+  # Compose a sequence of operations using pipe
+  result = pipe([1, 2, 3, 4, 5],
+                sum,
+                lambda x: x * 2)
+  
+  print(result)  # Output: 30
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>pipe:</strong> pipe function allows you to chain functions, passing the result of one to the next.</li>
+        <li><strong>Composing Functions:</strong> Sum the list first, and then multiply the result by 2.</li>
+      </ul>
+  
+      <h3>2. fn: A Lightweight Functional Programming Library for Python</h3>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Currying:</strong> Functions are curried by default.</li>
+        <li><strong>Lazy Evaluation:</strong> Supports lazy function calls.</li>
+      </ul>
+  
+      <p><strong>Example: Curried Functions</strong></p>
+      <pre><code>
+  from fn import F
+  
+  # Curried function to add two numbers
+  add = F(lambda a, b: a + b)
+  
+  add5 = add(5)
+  print(add5(3))  # Output: 8
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>Currying:</strong> The add function is curried, and add(5) returns a function that can be called with another argument.</li>
+      </ul>
+  
+      <h3>3. PyFunctional: An FP-Inspired Approach to Python</h3>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Data Pipelines:</strong> Create transformation pipelines on data.</li>
+        <li><strong>Immutability:</strong> Data structures are immutable by default.</li>
+      </ul>
+  
+      <p><strong>Example: Data Pipelines</strong></p>
+      <pre><code>
+  from pyfunctional import seq
+  
+  # Use map and filter to transform data
+  result = seq([1, 2, 3, 4, 5]) \
+      .filter(lambda x: x % 2 == 0) \
+      .map(lambda x: x * 2) \
+      .to_list()
+  
+  print(result)  # Output: [4, 8]
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>Data Pipelines:</strong> The data is first filtered to keep even numbers and then each element is doubled.</li>
+      </ul>
+  
+      <h3>4. pyrsistent: Immutable Data Structures in Python</h3>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Immutability:</strong> The data structures provided by pyrsistent are immutable, ensuring no side effects.</li>
+      </ul>
+  
+      <p><strong>Example: Immutable List</strong></p>
+      <pre><code>
+  from pyrsistent import pvector
+  
+  # Creating an immutable vector
+  numbers = pvector([1, 2, 3])
+  new_numbers = numbers.append(4)
+  
+  print(new_numbers)  # Output: pvector([1, 2, 3, 4])
+  print(numbers)      # Output: pvector([1, 2, 3])
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><strong>Immutability:</strong> The numbers vector remains unchanged when we append a new value, and a new pvector is returned instead.</li>
+      </ul>
+    </section>
+  </div>
+  

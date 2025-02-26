@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -10,4 +10,13 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class AppComponent {
   title = 'fp-py';
+
+  constructor(private router: Router) { }
+
+  login() {
+    // Logic for login
+    // After successful login, redirect to home page
+    this.router.navigate(['/']);
+  }
 }
+

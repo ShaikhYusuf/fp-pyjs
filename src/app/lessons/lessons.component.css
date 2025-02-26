@@ -40,3 +40,28 @@ mat-card-actions {
   background-color: lightblue !important; /* ✅ Lighter shade on hover */
   transform: scale(1.05); /* ✅ Slightly enlarge on hover */
 }
+
+/* Custom button style */
+.custom-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  font-size: 16px; /* Readable text size */
+  padding: 10px 20px; /* Adequate padding */
+  border-radius: 4px; /* Slight rounded corners */
+  text-transform: uppercase; /* Capitalize text for better emphasis */
+  font-weight: bold; /* Bold text for importance */
+  transition: background-color 0.3s, transform 0.3s ease-in-out; /* Smooth hover effect */
+  outline: none; /* Remove outline on focus */
+  border: none; /* Remove border */
+}
+
+/* Button hover effect */
+.custom-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scaling on hover for effect */
+}
+
+/* Button focus effect */
+.custom-button:focus {
+  outline: 2px solid #4CAF50; /* Green outline on focus for accessibility */
+}

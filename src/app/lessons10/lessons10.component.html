@@ -1,0 +1,217 @@
+<div class="container">
+    <!-- Lesson Title -->
+    <h1>Lesson 10: Final Project</h1>
+    
+    <!-- Lesson Overview -->
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        In this final project, you will develop a complex functional programming project in either JavaScript or Python.
+        You can choose one of the following examples for your project:
+      </p>
+      <ul>
+        <li>A Web Service</li>
+        <li>An AI Model</li>
+        <li>A Distributed System</li>
+      </ul>
+      <p>
+        Throughout this project, you'll focus on incorporating the core FP principles in your code. The goal is to practice applying concepts like immutability, higher-order functions, recursion, and monads, and see how they improve your application.
+      </p>
+    </section>
+  
+    <!-- Concepts Breakdown -->
+    <section>
+      <h2>Key Functional Programming Concepts</h2>
+      
+      <!-- Immutability -->
+      <div>
+        <h3>1. Immutability</h3>
+        <p>
+          Immutability is one of the most important principles of functional programming. It refers to the idea that once a value is created, it cannot be changed.
+        </p>
+        <h4>In JavaScript:</h4>
+        <pre><code>
+  const &#125; Map &#123; = require('immutable');
+  
+  let user = Map(&#125; name: 'Alice', age: 25 &#123;);
+  user = user.set('age', 26);  // A new Map is returned, the original Map remains unchanged
+  console.log(user);  // Map &#125; "name": "Alice", "age": 26 &#123;
+        </code></pre>
+        <h4>In Python:</h4>
+        <pre><code>
+  from pyrsistent import v
+  
+  numbers = v([1, 2, 3])
+  new_numbers = numbers.append(4)  # The original `numbers` list is unchanged
+  print(numbers)  # pvector([1, 2, 3])
+  print(new_numbers)  # pvector([1, 2, 3, 4])
+        </code></pre>
+      </div>
+  
+      <!-- Higher-Order Functions -->
+      <div>
+        <h3>2. Higher-Order Functions</h3>
+        <p>
+          A higher-order function is a function that either takes one or more functions as arguments or returns a function as a result.
+        </p>
+        <h4>In JavaScript:</h4>
+        <pre><code>
+  const multiply = (x) => (y) => x * y;  // Function that returns another function
+  
+  const timesThree = multiply(3);  // timesThree is now a function that multiplies any number by 3
+  console.log(timesThree(4));  // Output: 12
+        </code></pre>
+        <h4>In Python:</h4>
+        <pre><code>
+  def apply_function(f, x):
+      return f(x)
+  
+  result = apply_function(lambda x: x * 2, 4)  # Pass a function as an argument
+  print(result)  # Output: 8
+        </code></pre>
+      </div>
+  
+      <!-- Recursion -->
+      <div>
+        <h3>3. Recursion</h3>
+        <p>
+          Recursion is when a function calls itself in order to solve a problem. It’s a common pattern in functional programming and can often replace traditional looping constructs.
+        </p>
+        <h4>In JavaScript:</h4>
+        <pre><code>
+  function factorial(n) &#125;
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+  &#123;
+  
+  console.log(factorial(5));  // Output: 120
+        </code></pre>
+        <h4>In Python:</h4>
+        <pre><code>
+  def factorial(n):
+      if n <= 1:
+          return 1
+      return n * factorial(n - 1)
+  
+  print(factorial(5))  # Output: 120
+        </code></pre>
+      </div>
+  
+      <!-- Monads -->
+      <div>
+        <h3>4. Monads</h3>
+        <p>
+          Monads are used in FP to handle side effects, such as working with asynchronous operations or managing errors, without breaking functional purity. A monad encapsulates a value with a context and provides methods to operate on it.
+        </p>
+        <h4>In JavaScript:</h4>
+        <pre><code>
+  const fetchData = () => &#125;
+    return new Promise((resolve) => &#125;
+      setTimeout(() => resolve(10), 1000); // Simulate async operation
+    &#123;);
+  &#123;;
+  
+  fetchData()
+    .then((value) => value * 2) // Apply transformation
+    .then((result) => console.log(result));  // Output: 20
+        </code></pre>
+        <h4>In Python:</h4>
+        <pre><code>
+  class Option:
+      def __init__(self, value):
+          self.value = value
+  
+      def map(self, func):
+          if self.value is None:
+              return Option(None)
+          return Option(func(self.value))
+  
+  result = Option(10).map(lambda x: x * 2)
+  print(result.value)  # Output: 20
+        </code></pre>
+      </div>
+    </section>
+  
+    <!-- Example Projects -->
+    <section>
+      <h2>Example Projects</h2>
+  
+      <!-- Web Service Project -->
+      <div>
+        <h3>Example Project: Web Service in JavaScript (Node.js)</h3>
+        <p>
+          A web service is a great way to apply functional programming in real-world applications. You can use Node.js to create a server that handles HTTP requests. Here, you’ll focus on applying immutability and higher-order functions to manage state and handle asynchronous operations.
+        </p>
+        <pre><code>
+  const express = require('express');
+  const app = express();
+  
+  // Route with higher-order function
+  app.get('/greet', (req, res) => &#125;
+    const greet = (name) => `Hello, $&#125;name&#123;!`;
+    const response = greet(req.query.name || 'World');
+    res.send(response);
+  &#123;);
+  
+  app.listen(3000, () => &#125;
+    console.log('Server is running on port 3000');
+  &#123;);
+        </code></pre>
+      </div>
+  
+      <!-- AI Model Project -->
+      <div>
+        <h3>Example Project: AI Model in Python (Machine Learning Pipeline)</h3>
+        <p>
+          In Python, you can use functional programming principles in machine learning pipelines. Libraries like scikit-learn can be used, but we’ll focus on using functions to process data and apply transformations.
+        </p>
+        <pre><code>
+  from sklearn.datasets import load_iris
+  from sklearn.model_selection import train_test_split
+  from sklearn.ensemble import RandomForestClassifier
+  from sklearn.metrics import accuracy_score
+  
+  # Functional programming approach to a ML pipeline
+  def load_data():
+      return load_iris()
+  
+  def split_data(data):
+      return train_test_split(data.data, data.target, test_size=0.2)
+  
+  def train_model(X_train, y_train):
+      model = RandomForestClassifier()
+      model.fit(X_train, y_train)
+      return model
+  
+  def evaluate_model(model, X_test, y_test):
+      predictions = model.predict(X_test)
+      return accuracy_score(y_test, predictions)
+  
+  # Applying the functions
+  data = load_data()
+  X_train, X_test, y_train, y_test = split_data(data)
+  model = train_model(X_train, y_train)
+  accuracy = evaluate_model(model, X_test, y_test)
+  
+  print(f'Model Accuracy: &#125;accuracy&#123;')
+        </code></pre>
+      </div>
+    </section>
+  
+    <!-- Conclusion -->
+    <section>
+      <h2>Conclusion</h2>
+      <p>
+        In this final project, you are tasked with applying functional programming principles to build a complex system in either JavaScript or Python. Whether you're building a web service, an AI model, or a distributed system, the key is to use FP concepts like immutability, higher-order functions, recursion, and monads to manage complexity and write clean, maintainable code.
+      </p>
+      <p>
+        You will see that these functional programming techniques allow you to:
+      </p>
+      <ul>
+        <li>Better handle side effects</li>
+        <li>Make the code more modular and reusable</li>
+        <li>Improve maintainability and scalability of the application</li>
+      </ul>
+    </section>
+  </div>
+  

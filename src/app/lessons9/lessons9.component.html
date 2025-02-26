@@ -1,0 +1,155 @@
+<!-- app.component.html -->
+
+<div class="lesson-container">
+    <h1>Lesson 9: Case Studies and Industry Applications</h1>
+    
+    <section id="js-case-studies">
+      <h2>1. Real-world Case Studies of Functional Programming in JavaScript</h2>
+      
+      <div class="case-study">
+        <h3>Netflix</h3>
+        <p>Netflix is a major video streaming platform that serves millions of users worldwide. To maintain scalability and reliability, Netflix uses JavaScript along with functional programming techniques.</p>
+        
+        <h4>How Netflix Uses Functional Programming in JavaScript:</h4>
+        <ul>
+          <li><strong>Immutable Data Structures:</strong> Netflix uses immutable data structures to ensure that data remains unchanged throughout the application lifecycle, reducing the risk of side effects.</li>
+          <li><strong>Declarative Programming with RxJS:</strong> Netflix uses RxJS to manage complex data flows, especially with asynchronous streams.</li>
+          <li><strong>Function Composition:</strong> Netflix uses functional programming to compose and pipeline data transformations, reducing complexity.</li>
+        </ul>
+        
+        <h4>Example: Managing Asynchronous Streams with RxJS</h4>
+        <pre>
+          <code>
+            const &#125; interval &#123; = require('rxjs');
+            const &#125; map &#123; = require('rxjs/operators');
+  
+            interval(1000)
+              .pipe(
+                map(val => val * 10)
+              )
+              .subscribe(val => console.log(`Current bitrate: $&#125;val&#123; kbps`));
+          </code>
+        </pre>
+  
+        <h4>How This Helps Netflix:</h4>
+        <ul>
+          <li><strong>Non-blocking asynchronous operations:</strong> By using RxJS, Netflix can handle thousands of real-time data streams efficiently.</li>
+          <li><strong>Composable, Maintainable Code:</strong> Function composition helps Netflix maintain a modular, clean, and reusable codebase.</li>
+        </ul>
+      </div>
+      
+      <div class="case-study">
+        <h3>Airbnb</h3>
+        <p>Airbnb, a leading platform for short-term rentals, integrates functional programming principles in their JavaScript stack.</p>
+  
+        <h4>How Airbnb Uses Functional Programming in JavaScript:</h4>
+        <ul>
+          <li><strong>Immutable Data:</strong> Airbnb uses immutable.js to avoid side effects and ensure data consistency in booking data and user info.</li>
+          <li><strong>Pure Functions:</strong> Airbnb uses pure functions for tasks like calculating booking totals or user recommendation scores.</li>
+          <li><strong>Functional Programming with React:</strong> Airbnb uses React with a functional programming approach to design stateless, reusable UI components.</li>
+        </ul>
+  
+        <h4>Example: Immutable Data Structures in Airbnb</h4>
+        <pre>
+          <code>
+            const &#125; Map &#123; = require('immutable');
+            
+            const user = Map(&#125; name: 'John', age: 30 &#123;);
+            const updatedUser = user.set('age', 31);  // Immutable update
+            
+            console.log(user.get('age'));  // Output: 30
+            console.log(updatedUser.get('age'));  // Output: 31
+          </code>
+        </pre>
+  
+        <h4>How This Helps Airbnb:</h4>
+        <ul>
+          <li><strong>Simplified State Management:</strong> Immutable data ensures that state mutations don't occur unexpectedly, leading to bug-free code.</li>
+          <li><strong>Cleaner Code:</strong> Pure functions reduce side effects, and using React with FP principles makes components easier to debug.</li>
+        </ul>
+      </div>
+    </section>
+  
+    <section id="python-case-studies">
+      <h2>2. Functional Programming in Python for Large-Scale Systems</h2>
+      
+      <div class="case-study">
+        <h3>Using FP in Machine Learning Pipelines</h3>
+        <p>Machine learning involves processing large amounts of data, and FP helps manage the complexity of ML workflows by promoting immutability and avoiding side effects.</p>
+        
+        <h4>How FP Helps in Machine Learning Pipelines:</h4>
+        <ul>
+          <li><strong>Immutable Data:</strong> Using immutable data structures makes the pipeline more predictable and minimizes side effects.</li>
+          <li><strong>Composability:</strong> FP allows easy composition of functions to create readable, sequential data transformations.</li>
+          <li><strong>Declarative Pipelines:</strong> FP allows workflows to be expressed declaratively, focusing on what to achieve, not how to do it.</li>
+        </ul>
+  
+        <h4>Example: Composing Functions in a ML Pipeline</h4>
+        <pre>
+          <code>
+            from toolz import pipe
+            
+            data = [1, 2, 3, 4, 5]
+            
+            result = pipe(data,
+                          lambda x: [i * 2 for i in x],  # Feature scaling
+                          lambda x: sum(x))  # Simplified model output
+            
+            print(result)  # Output: 30
+          </code>
+        </pre>
+  
+        <h4>How This Helps in ML Pipelines:</h4>
+        <ul>
+          <li><strong>Data Processing:</strong> FP tools like toolz help build a testable and modular pipeline of transformations.</li>
+          <li><strong>Maintainability:</strong> Immutability and avoiding side effects improve pipeline maintainability, testing, and scalability.</li>
+        </ul>
+      </div>
+      
+      <div class="case-study">
+        <h3>Python for Distributed Systems</h3>
+        <p>Distributed systems benefit from functional programming principles for concurrency and fault tolerance.</p>
+  
+        <h4>How FP Helps in Distributed Systems:</h4>
+        <ul>
+          <li><strong>Concurrency:</strong> Stateless functions in FP can run in parallel, ideal for distributed systems.</li>
+          <li><strong>Fault Tolerance:</strong> Patterns like monads and either types help handle errors effectively in distributed systems.</li>
+        </ul>
+  
+        <h4>Example: Distributed Task Management with Celery</h4>
+        <pre>
+          <code>
+            from celery import Celery
+  
+            app = Celery('tasks', broker='pyamqp://guest&#64;localhost//')
+  
+            &#64;app.task
+            def add(x, y):
+                return x + y
+  
+            # Mapping tasks over a dataset
+            results = [add.apply_async((x, y)) for x, y in zip(range(10), range(10, 20))]
+          </code>
+        </pre>
+  
+        <h4>How This Helps in Distributed Systems:</h4>
+        <ul>
+          <li><strong>Task Scheduling:</strong> Celery uses functional programming to schedule and execute tasks concurrently in a distributed environment.</li>
+          <li><strong>Parallelism:</strong> FP allows parallel task execution without complex state management, improving system efficiency.</li>
+        </ul>
+      </div>
+    </section>
+  
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>This lesson demonstrated how functional programming is applied in real-world systems, both in JavaScript (e.g., Netflix, Airbnb) and Python (e.g., machine learning pipelines, distributed systems).</p>
+      
+      <h4>Key Takeaways:</h4>
+      <ul>
+        <li>JavaScript leverages FP for scalability, maintainability, and reliability in large-scale web apps like Netflix and Airbnb.</li>
+        <li>Python uses FP in ML pipelines and distributed systems to ensure predictable, concurrent, and scalable solutions.</li>
+        <li>Libraries like RxJS (for JavaScript) and tools like Celery (for Python) are commonly used in functional programming for large-scale systems.</li>
+      </ul>
+    </section>
+  </div>
+  

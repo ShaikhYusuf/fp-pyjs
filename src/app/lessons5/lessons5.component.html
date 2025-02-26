@@ -1,0 +1,245 @@
+<!-- lesson.component.html -->
+<div class="lesson">
+
+    <h1>Lesson 5: Functional Programming in Practice</h1>
+  
+    <h2>1. Functional Programming in JavaScript</h2>
+  
+    <h3>Writing Pure Functions and Higher-Order Functions in JS</h3>
+    
+    <h4>Pure Functions</h4>
+    <p><strong>What is a Pure Function?</strong></p>
+    <p>A pure function is a function that:</p>
+    <ul>
+      <li><strong>Always returns the same output for the same input</strong> (deterministic).</li>
+      <li><strong>Has no side effects</strong> (doesn't modify external state or perform I/O operations).</li>
+    </ul>
+    <p>Pure functions are predictable and easier to test and debug.</p>
+    
+    <h4>Example of a Pure Function</h4>
+    <pre><code>const add = (a, b) => a + b;
+  console.log(add(2, 3)); // Always returns 5</code></pre>
+  
+    <h4>Example of an Impure Function</h4>
+    <pre><code>let counter = 0;
+  const increment = () => &#123;
+    counter++; // Modifies external state
+    return counter;
+  &#125;;
+  console.log(increment()); // Output depends on external state</code></pre>
+  
+    <h3>Higher-Order Functions</h3>
+    <p><strong>What is a Higher-Order Function?</strong></p>
+    <p>A higher-order function is a function that:</p>
+    <ul>
+      <li>Takes one or more functions as arguments.</li>
+      <li>Returns a function as its result.</li>
+    </ul>
+    <p>Higher-order functions are a key concept in functional programming.</p>
+  
+    <h4>Example of a Higher-Order Function</h4>
+    <pre><code>const multiplyBy = (factor) => (number) => number * factor;
+  const double = multiplyBy(2);
+  console.log(double(5)); // 10</code></pre>
+  
+    <h3>Using Libraries like Ramda and Lodash FP</h3>
+  
+    <h4>Ramda</h4>
+    <p><strong>What is Ramda?</strong></p>
+    <p>Ramda is a functional programming library for JavaScript. It provides utility functions for working with data in a functional style.</p>
+  
+    <h4>Example of Ramda</h4>
+    <pre><code>import R from "ramda";
+  
+  const add = R.add;
+  const multiply = R.multiply;
+  
+  const result = R.pipe(add(2), multiply(3))(5); // (5 + 2) * 3 = 21
+  console.log(result);</code></pre>
+  
+    <h4>Lodash FP</h4>
+    <p><strong>What is Lodash FP?</strong></p>
+    <p>Lodash FP is a functional programming version of Lodash. It provides immutable and auto-curried functions.</p>
+  
+    <h4>Example of Lodash FP</h4>
+    <pre><code>import _ from "lodash/fp";
+  
+  const add = _.add;
+  const multiply = _.multiply;
+  
+  const result = _.pipe([add(2), multiply(3)])(5); // (5 + 2) * 3 = 21
+  console.log(result);</code></pre>
+  
+    <h2>2. Functional Programming in Python</h2>
+  
+    <h3>Writing Pure Functions and Higher-Order Functions in Python</h3>
+  
+    <h4>Pure Functions</h4>
+    <h4>Example of a Pure Function</h4>
+    <pre><code>def add(a, b):
+      return a + b
+  
+  print(add(2, 3))  # Always returns 5</code></pre>
+  
+    <h4>Higher-Order Functions</h4>
+    <h4>Example of a Higher-Order Function</h4>
+    <pre><code>def multiply_by(factor):
+      def multiply(number):
+          return number * factor
+      return multiply
+  
+  double = multiply_by(2)
+  print(double(5))  # 10</code></pre>
+  
+    <h3>Python's `functools` Module</h3>
+  
+    <h4>`reduce`</h4>
+    <p><strong>What is `reduce`?</strong></p>
+    <p>`reduce` applies a function cumulatively to items in a sequence, reducing it to a single value.</p>
+  
+    <h4>Example of `reduce`</h4>
+    <pre><code>from functools import reduce
+  
+  numbers = [1, 2, 3, 4]
+  total = reduce(lambda acc, x: acc + x, numbers)
+  print(total)  # 10</code></pre>
+  
+    <h4>`partial`</h4>
+    <p><strong>What is `partial`?</strong></p>
+    <p>`partial` fixes some arguments of a function, creating a new function.</p>
+  
+    <h4>Example of `partial`</h4>
+    <pre><code>from functools import partial
+  
+  def power(base, exponent):
+      return base ** exponent
+  
+  square = partial(power, exponent=2)
+  print(square(5))  # 25</code></pre>
+  
+    <h4>`lru_cache`</h4>
+    <p><strong>What is `lru_cache`?</strong></p>
+    <p>`lru_cache` is a decorator that memoizes function results to optimize performance.</p>
+  
+    <h4>Example of `lru_cache`</h4>
+    <pre><code>from functools import lru_cache
+  
+  &#64;lru_cache
+  def fibonacci(n):
+      if n < 2:
+          return n
+      return fibonacci(n - 1) + fibonacci(n - 2)
+  
+  print(fibonacci(10))  # 55</code></pre>
+  
+    <h3>Pythonic FP Libraries</h3>
+  
+    <h4>`toolz`</h4>
+    <p><strong>What is `toolz`?</strong></p>
+    <p>`toolz` is a library for functional programming in Python.</p>
+  
+    <h4>Example of `toolz`</h4>
+    <pre><code>from toolz import pipe
+  
+  result = pipe(5, lambda x: x + 2, lambda x: x * 3)  # (5 + 2) * 3 = 21
+  print(result)</code></pre>
+  
+    <h4>`fn`</h4>
+    <p><strong>What is `fn`?</strong></p>
+    <p>`fn` is a library for functional programming.</p>
+  
+    <h4>Example of `fn`</h4>
+    <pre><code>from fn import F
+  
+  result = F() >> (lambda x: x + 2) >> (lambda x: x * 3)  # (5 + 2) * 3 = 21
+  print(result(5))</code></pre>
+  
+    <h4>`PyFunctional`</h4>
+    <p><strong>What is `PyFunctional`?</strong></p>
+    <p>`PyFunctional` is a library for functional data processing.</p>
+  
+    <h4>Example of `PyFunctional`</h4>
+    <pre><code>from functional import seq
+  
+  result = seq([1, 2, 3]).map(lambda x: x * 2).sum()
+  print(result)  # 12</code></pre>
+  
+    <h2>3. Testing in Functional Programming</h2>
+  
+    <h3>Unit Testing Functional Code in JavaScript</h3>
+    <h4>Using Mocha</h4>
+    <pre><code>const assert = require("assert");
+  
+  const add = (a, b) => a + b;
+  
+  describe("add", () => &#123;
+    it("should return the sum of two numbers", () => &#123;
+      assert.strictEqual(add(2, 3), 5);
+    &#125;);
+  &#125;);</code></pre>
+  
+    <h3>Unit Testing Functional Code in Python</h3>
+    <h4>Using `pytest`</h4>
+    <pre><code>def add(a, b):
+      return a + b
+  
+  def test_add():
+      assert add(2, 3) == 5</code></pre>
+  
+    <h3>Property-Based Testing</h3>
+  
+    <h4>JavaScript (jsverify)</h4>
+    <pre><code>const jsc = require("jsverify");
+  
+  const add = (a, b) => a + b;
+  
+  jsc.assertForall(jsc.integer, jsc.integer, (a, b) => add(a, b) === a + b);</code></pre>
+  
+    <h4>Python (Hypothesis)</h4>
+    <pre><code>from hypothesis import given
+  from hypothesis.strategies import integers
+  
+  def add(a, b):
+      return a + b
+  
+  &#64;given(integers(), integers())
+  def test_add(a, b):
+      assert add(a, b) == a + b</code></pre>
+  
+    <h2>4. Design Patterns in FP</h2>
+  
+    <h3>JavaScript FP Design Patterns</h3>
+  
+    <h4>Function Composition</h4>
+    <pre><code>const compose = (f, g) => (x) => f(g(x));
+  const add = (x) => x + 2;
+  const multiply = (x) => x * 3;
+  
+  const result = compose(multiply, add)(5); // (5 + 2) * 3 = 21
+  console.log(result);</code></pre>
+  
+    <h3>Python FP Design Patterns</h3>
+  
+    <h4>Strategy Pattern</h4>
+    <pre><code>def strategy_add(a, b):
+      return a + b
+  
+  def strategy_multiply(a, b):
+      return a * b
+  
+  def execute_strategy(strategy, a, b):
+      return strategy(a, b)
+  
+  print(execute_strategy(strategy_add, 2, 3))  # 5
+  print(execute_strategy(strategy_multiply, 2, 3))  # 6</code></pre>
+  
+    <h2>Summary</h2>
+    <ul>
+      <li><strong>JavaScript</strong>: Use pure functions, higher-order functions, and libraries like Ramda, Lodash FP, and RxJS.</li>
+      <li><strong>Python</strong>: Use pure functions, higher-order functions, `functools`, and libraries like `toolz`, `fn`, and `PyFunctional`.</li>
+      <li><strong>Testing</strong>: Use unit testing frameworks like Mocha, Jest, and `pytest`, and property-based testing with `jsverify` and `Hypothesis`.</li>
+      <li><strong>Design Patterns</strong>: Use function composition, monads, and strategy patterns in both JavaScript and Python.</li>
+    </ul>
+  
+  </div>
+  

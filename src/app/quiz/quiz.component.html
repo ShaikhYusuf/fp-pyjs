@@ -1,1 +1,31 @@
-<p>quiz works!</p>
+<div class="quiz-container" *ngIf="questions.length > 0">
+    <h2>Quiz</h2>
+  
+    <div *ngFor="let question of questions; let i = index" class="question-container">
+      <h3>{{ question.question }}</h3>
+      <div *ngFor="let option of question.options">
+        <label>
+          <input
+            type="radio"
+            name="question{{ i }}"
+            [value]="option"
+            [(ngModel)]="userAnswers[i]"
+          />
+          {{ option }}
+        </label>
+      </div>
+    </div>
+  
+    <div class="quiz-footer">
+      <button (click)="calculateScore()">Submit Answers</button>
+      <button *ngIf="score !== 0" (click)="resetQuiz()">Restart Quiz</button>
+    </div>
+  
+    <div *ngIf="score !== 0">
+      <h3>Your Score: {{ score }} / {{ questions.length }}</h3>
+    </div>
+  </div>
+  
+  <!-- Show loading message while data is being fetched -->
+  <div *ngIf="questions.length === 0">Loading quiz data...</div>
+  
