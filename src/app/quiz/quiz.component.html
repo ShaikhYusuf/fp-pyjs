@@ -1,24 +1,17 @@
-<div *ngIf="!quizData">
-  <p>Loading quiz data...</p>
-</div>
+<div class="quiz-container">
+  <div *ngFor="let quiz of quizzes" class="quiz-item">
+    <h2>{{ quiz.question }}</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let option of quiz.options; let i = index" [ngClass]="getClass(quiz.id, i + 1)"
+        (click)="selectOption(quiz.id, i + 1)">
+        {{ option }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <!-- HTML -->
+  <div class="button-container">
+    <button mat-raised-button class="custom-button" (click)="submitAnswers()">Submit</button>
+  </div>
 
-<div class="quiz-container" *ngIf="quizData">
-  <h1>{{ quizData.lesson }}</h1>
-  <div class="question-box" *ngIf="quizData.questions && quizData.questions.length > 0">
-    <p>{{ quizData.questions[currentQuestionIndex]?.question }}</p>
-    <div *ngFor="let option of quizData.questions[currentQuestionIndex]?.options; let i = index">
-      <input
-        type="radio"
-        [id]="'option' + i"
-        [value]="option"
-        name="option"
-        [(ngModel)]="selectedOption"
-      />
-      <label [for]="'option' + i">{{ option }}</label>
-    </div>
-    <button (click)="nextQuestion()">Next</button>
-  </div>
-  <div *ngIf="!quizData.questions || quizData.questions.length === 0">
-    <p>No questions available.</p>
-  </div>
+
 </div>

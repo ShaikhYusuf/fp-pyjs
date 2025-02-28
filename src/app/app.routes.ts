@@ -28,7 +28,7 @@ export const routes: Routes = [
     { path: 'les8', component: Lessons8Component },
     { path: 'les9', component: Lessons9Component },
     { path: 'les10', component: Lessons10Component },
-    { path: 'quiz/:id', component: QuizComponent },
+    { path: 'quiz/:lessonId', component: QuizComponent },
     { path: 'quiz-list', component: QuizListComponent },
 
 
