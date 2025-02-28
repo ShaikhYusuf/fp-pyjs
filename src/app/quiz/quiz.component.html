@@ -1,31 +1,24 @@
-<div class="quiz-container" *ngIf="questions.length > 0">
-    <h2>Quiz</h2>
-  
-    <div *ngFor="let question of questions; let i = index" class="question-container">
-      <h3>{{ question.question }}</h3>
-      <div *ngFor="let option of question.options">
-        <label>
-          <input
-            type="radio"
-            name="question{{ i }}"
-            [value]="option"
-            [(ngModel)]="userAnswers[i]"
-          />
-          {{ option }}
-        </label>
-      </div>
+<div *ngIf="!quizData">
+  <p>Loading quiz data...</p>
+</div>
+
+<div class="quiz-container" *ngIf="quizData">
+  <h1>{{ quizData.lesson }}</h1>
+  <div class="question-box" *ngIf="quizData.questions && quizData.questions.length > 0">
+    <p>{{ quizData.questions[currentQuestionIndex]?.question }}</p>
+    <div *ngFor="let option of quizData.questions[currentQuestionIndex]?.options; let i = index">
+      <input
+        type="radio"
+        [id]="'option' + i"
+        [value]="option"
+        name="option"
+        [(ngModel)]="selectedOption"
+      />
+      <label [for]="'option' + i">{{ option }}</label>
     </div>
-  
-    <div class="quiz-footer">
-      <button (click)="calculateScore()">Submit Answers</button>
-      <button *ngIf="score !== 0" (click)="resetQuiz()">Restart Quiz</button>
-    </div>
-  
-    <div *ngIf="score !== 0">
-      <h3>Your Score: {{ score }} / {{ questions.length }}</h3>
-    </div>
+    <button (click)="nextQuestion()">Next</button>
   </div>
-  
-  <!-- Show loading message while data is being fetched -->
-  <div *ngIf="questions.length === 0">Loading quiz data...</div>
-  
+  <div *ngIf="!quizData.questions || quizData.questions.length === 0">
+    <p>No questions available.</p>
+  </div>
+</div>

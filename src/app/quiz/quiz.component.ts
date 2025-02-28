@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { QuizService } from '../quiz.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -7,50 +8,58 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-quiz',
   standalone: true,
-  imports: [FormsModule, CommonModule,],  // Ensure HttpClientModule is included in imports
+  imports: [FormsModule, CommonModule, ],
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })
-export class QuizComponent {
-  questions: any[] = [];  // Store quiz questions
-  userAnswers: string[] = [];
-  score = 0;
+export class QuizComponent implements OnInit {
+  lessonId: string = '';
+  quizData: any = { questions: [] }; // Initialize with an empty questions array
+  currentQuestionIndex: number = 0;
+  selectedOption: string = '';
 
-  constructor(private http: HttpClient) {
-    this.loadQuizData();  // Calling the method to load quiz data
-  }
+  constructor(private route: ActivatedRoute, private quizService: QuizService) {}
 
-  // Fetch the quiz data from the JSON file in public/quiz-data
-  loadQuizData() {
-    this.http.get<any[]>('public/quiz-data/lesson1.json').subscribe({
+  ngOnInit() {
+    this.lessonId = this.route.snapshot.paramMap.get('id') || '';
+    console.log('Lesson ID:', this.lessonId); // Debugging: Log the lessonId
+
+    if (!this.lessonId) {
+      console.error('Lesson ID is missing');
+      return;
+    }
+
+    this.quizService.getQuizData(this.lessonId).subscribe({
       next: (data) => {
-        this.questions = data;
+        this.quizData = data;
+        console.log('Quiz data loaded:', data); // Debugging: Log the loaded data
       },
       error: (err) => {
-        console.error('Error loading quiz data:', err);
-        alert('There was an error loading the quiz data. Please try again later.');
+        console.error('Failed to load quiz data:', err);
       }
     });
   }
 
-  // Function to handle answer selection
-  selectAnswer(questionIndex: number, answer: string) {
-    this.userAnswers[questionIndex] = answer;
-  }
+  nextQuestion() {
+    if (this.quizData.questions && this.quizData.questions.length > 0) {
+      const correctAnswerIndex = this.quizData.questions[this.currentQuestionIndex].answer;
+      const selectedOptionIndex = this.quizData.questions[this.currentQuestionIndex].options.indexOf(this.selectedOption);
 
-  // Function to calculate the score
-  calculateScore(): void {
-    this.score = this.questions.reduce((acc, curr, index) => {
-      if (this.userAnswers[index] === curr.correctAnswer) {
-        acc++;
+      if (selectedOptionIndex === correctAnswerIndex) {
+        alert('Correct!');
+      } else {
+        alert('Wrong Answer!');
       }
-      return acc;
-    }, 0);
-  }
 
-  // Reset the quiz
-  resetQuiz() {
-    this.userAnswers = [];
-    this.score = 0;
+      this.selectedOption = ''; // Reset the selected option
+
+      // Move to the next question or end the quiz
+      if (this.currentQuestionIndex < this.quizData.questions.length - 1) {
+        this.currentQuestionIndex++;
+      } else {
+        alert('Quiz completed!');
+        // Optionally, reset the quiz or navigate to a different page
+      }
+    }
   }
 }

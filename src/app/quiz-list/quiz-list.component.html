@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Select a Lesson</h1>
+    <div class="card-container">
+      <div *ngFor="let lesson of lessons" class="card">
+        <h2>{{ lesson.name }}</h2>
+        <button class="btn" (click)="startQuiz(lesson.id)">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+  

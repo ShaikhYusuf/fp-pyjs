@@ -1,13 +1,102 @@
 [
-    {
-      "question": "What is the capital of France?",
-      "options": ["Berlin", "Madrid", "Paris", "Rome"],
-      "correctAnswer": "Paris"
-    },
-    {
-      "question": "What is 2 + 2?",
-      "options": ["3", "4", "5", "6"],
-      "correctAnswer": "4"
-    }
-  ]
-  
+  {
+    "question": "What is the main focus of Functional Programming (FP)?",
+    "options": [
+      "A) How to do things",
+      "B) What to do",
+      "C) Object creation",
+      "D) Data manipulation"
+    ],
+    "answer": "A) How to do things"
+  },
+  {
+    "question": "Which of the following is a key characteristic of FP?",
+    "options": [
+      "A) Changing data frequently",
+      "B) Immutability",
+      "C) Using loops to modify data",
+      "D) Avoiding functions"
+    ],
+    "answer": "A) Changing data frequently"
+  },
+  {
+    "question": "Which of the following best describes a pure function?",
+    "options": [
+      "A) A function that depends on global variables",
+      "B) A function that always produces the same output for the same input",
+      "C) A function that modifies its input",
+      "D) A function that causes side effects"
+    ],
+    "answer": "A) A function that depends on global variables"
+  },
+  {
+    "question": "In Functional Programming, how is data treated?",
+    "options": [
+      "A) Data is frequently updated",
+      "B) Data is never changed, instead new data is created",
+      "C) Data is mutated in place",
+      "D) Data is optional"
+    ],
+    "answer": "A) Data is frequently updated"
+  },
+  {
+    "question": "Which of the following is an advantage of Functional Programming?",
+    "options": [
+      "A) Complex debugging due to side effects",
+      "B) Easier concurrency due to immutable data structures",
+      "C) Code that is hard to test",
+      "D) Reusability of non-pure functions"
+    ],
+    "answer": "A) Complex debugging due to side effects"
+  },
+  {
+    "question": "What is an example of an imperative programming approach?",
+    "options": [
+      "A) Using a loop to modify elements of an array",
+      "B) Using pure functions to process data",
+      "C) Creating functions that return other functions",
+      "D) Using functions like map to transform data"
+    ],
+    "answer": "A) Using a loop to modify elements of an array"
+  },
+  {
+    "question": "In Object-Oriented Programming, what is the primary focus?",
+    "options": [
+      "A) Objects and methods that operate on data",
+      "B) Functions without side effects",
+      "C) Data immutability",
+      "D) Composition of small functions"
+    ],
+    "answer": "A) Objects and methods that operate on data"
+  },
+  {
+    "question": "Which of the following is true about higher-order functions?",
+    "options": [
+      "A) They can’t accept functions as arguments",
+      "B) They only work with numbers",
+      "C) They can accept other functions as arguments",
+      "D) They modify data directly"
+    ],
+    "answer": "B) They only work with numbers"
+  },
+  {
+    "question": "Which of the following code examples demonstrates immutability in JavaScript?",
+    "options": [
+      "A) Modifying the numbers array in place",
+      "B) Using the map function to create a new array",
+      "C) Using a for loop to change data in an array",
+      "D) Changing the values of an array directly"
+    ],
+    "answer": "A) Modifying the numbers array in place"
+  },
+  {
+    "question": "Which Python function is used for transforming data in a functional style?",
+    "options": [
+      "A) map",
+      "B) for",
+      "C) print",
+      "D) input"
+    ],
+    "answer": "A) map"
+  }
+]

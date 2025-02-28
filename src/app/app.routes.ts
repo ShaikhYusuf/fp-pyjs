@@ -7,13 +7,12 @@ import { Lesson4Component } from './lessons4/lesson4.component';
 import { HomeComponent } from './home/home.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { Lessons5Component } from './lessons5/lessons5.component';
-
-
 import { Lessons8Component } from './lessons8/lessons8.component';
 import { Lessons9Component } from './lessons9/lessons9.component';
 import { Lessons10Component } from './lessons10/lessons10.component';
 import { Lessons6Component } from './lessons6/lessons6.component';
 import { Lessons7Component } from './lessons7/lessons7.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
 
 export const routes: Routes = [
 
@@ -29,8 +28,8 @@ export const routes: Routes = [
     { path: 'les8', component: Lessons8Component },
     { path: 'les9', component: Lessons9Component },
     { path: 'les10', component: Lessons10Component },
-
-    { path: 'quiz', component: QuizComponent },
+    { path: 'quiz/:id', component: QuizComponent },
+    { path: 'quiz-list', component: QuizListComponent },
 
 
 ];
