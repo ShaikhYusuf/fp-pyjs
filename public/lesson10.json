@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is the primary goal of the final project in this lesson?",
+        "options": [
+            "A) To memorize functional programming concepts",
+            "B) To apply functional programming principles in a real-world project",
+            "C) To create a static website using HTML and CSS",
+            "D) To learn object-oriented programming"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "Which of the following is NOT a suggested project type for the final project?",
+        "options": [
+            "A) A Web Service",
+            "B) A Game Development Engine",
+            "C) An AI Model",
+            "D) A Distributed System"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 3,
+        "question": "What does immutability mean in functional programming?",
+        "options": [
+            "A) A value cannot be changed once created",
+            "B) A variable can be reassigned multiple times",
+            "C) Functions must modify global state",
+            "D) Objects can be updated directly"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 4,
+        "question": "Which library is used in JavaScript to enforce immutability?",
+        "options": [
+            "A) Lodash",
+            "B) Immutable.js",
+            "C) Redux",
+            "D) Express.js"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 5,
+        "question": "Which Python library helps enforce immutability?",
+        "options": [
+            "A) NumPy",
+            "B) Pandas",
+            "C) Pyrsistent",
+            "D) TensorFlow"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 6,
+        "question": "What is a higher-order function?",
+        "options": [
+            "A) A function that modifies global variables",
+            "B) A function that is written in a higher-level language",
+            "C) A function that takes another function as an argument or returns a function",
+            "D) A function that runs in the background"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 7,
+        "question": "Which of the following is an example of a higher-order function in JavaScript?",
+        "options": [
+            "A) forEach",
+            "B) console.log",
+            "C) parseInt",
+            "D) typeof"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 8,
+        "question": "Which built-in Python function is an example of a higher-order function?",
+        "options": [
+            "A) print()",
+            "B) map()",
+            "C) range()",
+            "D) len()"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 9,
+        "question": "What is recursion?",
+        "options": [
+            "A) A function calling itself",
+            "B) A function calling multiple other functions",
+            "C) A loop that never ends",
+            "D) A function that runs once and stops"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 10,
+        "question": "Which of the following best describes a monad?",
+        "options": [
+            "A) A way to handle side effects in functional programming",
+            "B) A special type of loop",
+            "C) A global variable that cannot be modified",
+            "D) A function that runs without parameters"
+        ],
+        "answer": 1
+    }
+]

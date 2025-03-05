@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is the main purpose of pattern matching in functional programming?",
+        "options": [
+            "A) To compare two values for equality",
+            "B) To check a value against a pattern and extract data",
+            "C) To execute a loop conditionally",
+            "D) To define global variables"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "Which JavaScript feature allows extracting values from arrays or objects?",
+        "options": [
+            "A) Spread operator",
+            "B) Destructuring",
+            "C) Arrow functions",
+            "D) Promises"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 3,
+        "question": "Which statement in Python 3.10+ is used for pattern matching?",
+        "options": [
+            "A) switch-case",
+            "B) match",
+            "C) if-elif-else",
+            "D) try-except"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 4,
+        "question": "What is recursion?",
+        "options": [
+            "A) A function calling itself",
+            "B) A function that modifies a variable",
+            "C) A function with a loop",
+            "D) A function that runs once"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 5,
+        "question": "Which of the following is an example of tail recursion?",
+        "options": [
+            "A) A function where recursive call is the last operation",
+            "B) A function that calls another function",
+            "C) A function that contains a loop",
+            "D) A function with multiple recursive calls at different places"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 6,
+        "question": "Which JavaScript feature supports lazy evaluation?",
+        "options": [
+            "A) Closures",
+            "B) Generators",
+            "C) Promises",
+            "D) Callbacks"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 7,
+        "question": "How can Python achieve lazy evaluation?",
+        "options": [
+            "A) Using lists",
+            "B) Using loops",
+            "C) Using generators",
+            "D) Using recursion"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 8,
+        "question": "Which language uses weak typing by default?",
+        "options": [
+            "A) Python",
+            "B) Java",
+            "C) JavaScript",
+            "D) C++"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 9,
+        "question": "What does currying do?",
+        "options": [
+            "A) Converts a function with multiple arguments into a sequence of single-argument functions",
+            "B) Optimizes code execution",
+            "C) Converts loops into recursive functions",
+            "D) Allows functions to be stored as variables"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 10,
+        "question": "Which Python module provides partial application functionality?",
+        "options": [
+            "A) functools",
+            "B) itertools",
+            "C) collections",
+            "D) random"
+        ],
+        "answer": 1
+    }
+]

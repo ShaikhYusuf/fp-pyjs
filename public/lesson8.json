@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "Which JavaScript library is known for currying by default?",
+        "options": [
+            "A) Lodash FP",
+            "B) Ramda",
+            "C) RxJS",
+            "D) Folktale"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "What does RxJS primarily work with?",
+        "options": [
+            "A) Observables",
+            "B) Immutable Objects",
+            "C) Promises",
+            "D) Monads"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 3,
+        "question": "Which functional programming library provides Maybe and Either monads?",
+        "options": [
+            "A) Lodash FP",
+            "B) Folktale",
+            "C) Ramda",
+            "D) PyFunctional"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 4,
+        "question": "Which Python library is designed for immutable data structures?",
+        "options": [
+            "A) fn",
+            "B) pyrsistent",
+            "C) toolz",
+            "D) PyFunctional"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 5,
+        "question": "Which of the following libraries is focused on functional reactive programming?",
+        "options": [
+            "A) PyFunctional",
+            "B) Ramda",
+            "C) RxJS",
+            "D) Folktale"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 6,
+        "question": "Which library allows function composition using pipe in Python?",
+        "options": [
+            "A) toolz",
+            "B) pyrsistent",
+            "C) fn",
+            "D) Lodash FP"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 7,
+        "question": "Which JavaScript library ensures functions are curried and immutable by default?",
+        "options": [
+            "A) Lodash FP",
+            "B) RxJS",
+            "C) toolz",
+            "D) PyFunctional"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 8,
+        "question": "Which Python library supports lazy function calls and currying?",
+        "options": [
+            "A) Ramda",
+            "B) fn",
+            "C) PyFunctional",
+            "D) Folktale"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 9,
+        "question": "What does _.map() do in Lodash FP?",
+        "options": [
+            "A) Filters an array",
+            "B) Applies a function to each element of an array",
+            "C) Reduces an array to a single value",
+            "D) Combines multiple arrays"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 10,
+        "question": "Which of the following JavaScript libraries is best suited for handling async data streams?",
+        "options": [
+            "A) Ramda",
+            "B) Lodash FP",
+            "C) RxJS",
+            "D) pyrsistent"
+        ],
+        "answer": 3
+    }
+]

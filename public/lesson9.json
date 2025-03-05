@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "How does Netflix use immutable data structures in JavaScript?",
+        "options": [
+            "A) To modify state directly",
+            "B) To ensure data remains unchanged, reducing side effects",
+            "C) To increase mutation speed",
+            "D) To store temporary user preferences"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "Which JavaScript library does Netflix use for handling asynchronous data streams?",
+        "options": [
+            "A) Lodash",
+            "B) RxJS",
+            "C) Immutable.js",
+            "D) Redux"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 3,
+        "question": "How does function composition help Netflix?",
+        "options": [
+            "A) It reduces complexity by pipelining data transformations",
+            "B) It makes their UI more interactive",
+            "C) It increases data redundancy",
+            "D) It replaces all object-oriented concepts"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 4,
+        "question": "Why does Airbnb use Immutable.js?",
+        "options": [
+            "A) To allow mutable state updates",
+            "B) To create side effects in their application",
+            "C) To avoid side effects and ensure data consistency",
+            "D) To store session data"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 5,
+        "question": "Which of the following functional programming concepts is widely used by Airbnb in React?",
+        "options": [
+            "A) Object-oriented components",
+            "B) Pure functions",
+            "C) Promises for state management",
+            "D) Event-driven architecture"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 6,
+        "question": "How does functional programming help machine learning pipelines in Python?",
+        "options": [
+            "A) By promoting immutability and avoiding side effects",
+            "B) By making models object-oriented",
+            "C) By increasing randomness in data processing",
+            "D) By allowing mutable operations on training data"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 7,
+        "question": "Which Python library is commonly used for function composition in ML pipelines?",
+        "options": [
+            "A) NumPy",
+            "B) Pandas",
+            "C) toolz",
+            "D) Flask"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 8,
+        "question": "How does functional programming improve distributed systems?",
+        "options": [
+            "A) By making functions stateless and suitable for parallel execution",
+            "B) By introducing complex state management",
+            "C) By enforcing a single-threaded architecture",
+            "D) By disabling concurrency in tasks"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 9,
+        "question": "Which of the following tools is used in Python for distributed task management?",
+        "options": [
+            "A) Celery",
+            "B) PyTorch",
+            "C) Scikit-learn",
+            "D) TensorFlow"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 10,
+        "question": "What is a key benefit of using functional programming in large-scale applications?",
+        "options": [
+            "A) It allows direct state modifications",
+            "B) It reduces side effects and improves maintainability",
+            "C) It makes debugging more complex",
+            "D) It discourages parallel execution"
+        ],
+        "answer": 2
+    }
+]

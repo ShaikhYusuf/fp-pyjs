@@ -15,7 +15,7 @@ import { Lessons7Component } from './lessons7/lessons7.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 
 export const routes: Routes = [
-
+    { path: '', redirectTo: 'home', pathMatch: 'full' }, // Default Home Page
     { path: 'home', component: HomeComponent },
     { path: 'lessons', component: LessonsComponent },
     { path: 'les1', component: Lessons1Component },
