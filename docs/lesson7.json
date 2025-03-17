@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is Metaprogramming?",
+        "options": [
+            "A) A programming language that generates new languages",
+            "B) Writing code that writes or modifies other code",
+            "C) A function that modifies global variables",
+            "D) A feature of Object-Oriented Programming only"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "What is the primary purpose of a function factory in JavaScript?",
+        "options": [
+            "A) To execute a function immediately",
+            "B) To store multiple functions in an array",
+            "C) To modify an existing function's behavior",
+            "D) To create new functions dynamically"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 3,
+        "question": "Which module in Python provides support for functional programming concepts like partial functions?",
+        "options": [
+            "A) functools",
+            "B) metaclasses",
+            "C) itertools",
+            "D) decorators"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 4,
+        "question": "What is the primary benefit of using decorators in JavaScript?",
+        "options": [
+            "A) To modify a function without changing its code",
+            "B) To execute a function immediately",
+            "C) To create multiple instances of a function",
+            "D) To convert a function into an arrow function"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 5,
+        "question": "What does an event-driven architecture enable in Node.js?",
+        "options": [
+            "A) Sequential execution of code",
+            "B) Handling multiple events asynchronously",
+            "C) Running a single-threaded blocking operation",
+            "D) Executing only synchronous functions"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 6,
+        "question": "Which of the following best describes the role of a metaclass in Python?",
+        "options": [
+            "A) A class that modifies how other classes are created",
+            "B) A function that manipulates objects dynamically",
+            "C) A special decorator used for modifying classes",
+            "D) A module that supports functional programming"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 7,
+        "question": "Which library is commonly used in Python for distributed task management?",
+        "options": [
+            "A) Node.js",
+            "B) Express",
+            "C) React Native",
+            "D) Celery"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 8,
+        "question": "How does React Native implement functional programming concepts?",
+        "options": [
+            "A) By using functional components",
+            "B) By requiring all state changes to be mutable",
+            "C) By enforcing class-based components only",
+            "D) By using only imperative programming principles"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 9,
+        "question": "Which of the following best describes AWS Lambda?",
+        "options": [
+            "A) A function that runs only locally",
+            "B) A serverless computing service",
+            "C) A dedicated server hosting platform",
+            "D) A function that needs to be manually executed"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 10,
+        "question": "Which of the following Python libraries is used for mobile app development?",
+        "options": [
+            "A) Kivy",
+            "B) Express",
+            "C) Celery",
+            "D) EventEmitter"
+        ],
+        "answer": 1
+    }
+]

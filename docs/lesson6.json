@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is a pure function in Functional Programming?",
+        "options": [
+            "A) A function that modifies external variables",
+            "B) A function that always produces the same output for the same input and has no side effects",
+            "C) A function that depends on external state",
+            "D) A function that changes its behavior based on global variables"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "Which statement best describes immutability in FP?",
+        "options": [
+            "A) Data can be changed at any time",
+            "B) Once created, data cannot be modified, only new values can be generated",
+            "C) Functions can modify global state",
+            "D) Variables must always be mutable"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 3,
+        "question": "What is the primary benefit of functional components in React?",
+        "options": [
+            "A) They are complex and difficult to understand",
+            "B) They modify the global state",
+            "C) They are pure functions that return UI elements based on props",
+            "D) They cannot be reused in other parts of the application"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 4,
+        "question": "Which Python framework supports a functional approach in web development?",
+        "options": [
+            "A) Django",
+            "B) Flask",
+            "C) FastAPI",
+            "D) Both B and C"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 5,
+        "question": "How does Mongoose help in applying Functional Programming principles?",
+        "options": [
+            "A) By allowing direct modifications of database objects",
+            "B) By enforcing immutability and predictable functions",
+            "C) By requiring developers to write imperative code",
+            "D) By promoting side effects in database operations"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 6,
+        "question": "Which Python ORM follows FP principles when interacting with databases?",
+        "options": [
+            "A) Peewee",
+            "B) SQLAlchemy",
+            "C) Django ORM",
+            "D) MongoEngine"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 7,
+        "question": "What is the advantage of using PyFunctional in Python?",
+        "options": [
+            "A) It allows imperative programming",
+            "B) It provides an easy way to apply FP techniques like map, filter, and reduce",
+            "C) It enforces mutability in data structures",
+            "D) It replaces Pandas and NumPy"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 8,
+        "question": "Which method is commonly used in FP for working with data collections in JavaScript?",
+        "options": [
+            "A) for loop",
+            "B) map() and filter()",
+            "C) while loop",
+            "D) switch statements"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 9,
+        "question": "How does FP help in systems programming with Node.js?",
+        "options": [
+            "A) It allows modifying system files unpredictably",
+            "B) It promotes writing pure functions that manage file operations without side effects",
+            "C) It makes code harder to debug",
+            "D) It relies on synchronous programming"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 10,
+        "question": "Which library in Python supports functional concurrency programming?",
+        "options": [
+            "A) Flask",
+            "B) Django",
+            "C) asyncio",
+            "D) Tornado"
+        ],
+        "answer": 3
+    }
+]

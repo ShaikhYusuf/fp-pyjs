@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is the main focus of Functional Programming (FP)?",
+        "options": [
+            "A) Data modification",
+            "B) Object creation",
+            "c) What to do",
+            "D) How to do things"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "Which of the following is a characteristic of Functional Programming?",
+        "options": [
+            "A) Modifying data frequently",
+            "B) Immutability",
+            "c) Changing object properties directly",
+            "D) Using loops for iteration"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 3,
+        "question": "What is a Pure Function?",
+        "options": [
+            "A) A function that returns different outputs for the same input",
+            "B) A function that relies on external state",
+            "C) A function that always returns the same output for the same input and has no side effects",
+            "D) A function that modifies global variables"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 4,
+        "question": "Which of the following best describes Higher-Order Functions?",
+        "options": [
+            "A) Functions that modify state directly",
+            "B) Functions that are used in OOP",
+            "C) Functions that take another function as an argument or return a function",
+            "D) Functions that can only return numbers"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 5,
+        "question": "What is the main difference between Functional and Imperative Programming?",
+        "options": [
+            "A) Functional Programming focuses on 'how' while Imperative Programming focuses on 'what'",
+            "B) Imperative Programming avoids side effects, while Functional Programming encourages them",
+            "C) Functional Programming focuses on 'what' while Imperative Programming focuses on 'how'",
+            "D) Both are the same"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 6,
+        "question": "Which of the following languages supports Functional Programming?",
+        "options": [
+            "A) Python",
+            "B) JavaScript",
+            "C) Both A and B",
+            "D) None of the above"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 7,
+        "question": "Which method in JavaScript is commonly used for Functional Programming?",
+        "options": [
+            "A) switch statement",
+            "B) while loop",
+            "C) for loop",
+            "D) map()"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 8,
+        "question": "Why is immutability important in Functional Programming?",
+        "options": [
+            "A) It makes code less readable",
+            "B) It makes debugging harder",
+            "C) It prevents unintended side effects",
+            "D) It allows direct data modification"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 9,
+        "question": "Which of the following best describes Referential Transparency?",
+        "options": [
+            "A) A feature exclusive to Object-Oriented Programming",
+            "B) A function that modifies external state",
+            "C) A function that depends on user input",
+            "D) An expression that can be replaced with its value without changing the program's behavior"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 10,
+        "question": "What is the main advantage of Functional Programming?",
+        "options": [
+            "A) Requires modifying global variables",
+            "B) Makes concurrency easier due to immutability",
+            "C) Encourages side effects",
+            "D) Uses more memory than other paradigms"
+        ],
+        "answer": 1
+    }
+]

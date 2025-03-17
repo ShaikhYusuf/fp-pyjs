@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is a Monad in functional programming?",
+        "options": [
+            "A) A design pattern that structures computations in sequence",
+            "B) A function that executes before any other function",
+            "C) A loop that iterates infinitely",
+            "D) A method to store values permanently"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 2,
+        "question": "Which of the following is an example of a Monad in JavaScript?",
+        "options": [
+            "A) Array",
+            "B) Promise",
+            "C) Loop",
+            "D) If-else statement"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 3,
+        "question": "What does the Maybe monad help prevent in JavaScript?",
+        "options": [
+            "A) Division by zero errors",
+            "B) Null pointer errors",
+            "C) Infinite loops",
+            "D) Memory leaks"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 4,
+        "question": "How does the 'map' function in a Functor work?",
+        "options": [
+            "A) It executes a function on the contained value and returns a new container",
+            "B) It deletes the value from the container",
+            "C) It replaces the function with a constant value",
+            "D) It converts the value into a string"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 5,
+        "question": "Which of the following is NOT a characteristic of a Monad?",
+        "options": [
+            "A) It must have a 'map' function",
+            "B) It must support function chaining",
+            "C) It must contain a wrapped value",
+            "D) It must modify global state"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 6,
+        "question": "What is the purpose of the Either Monad?",
+        "options": [
+            "A) To perform infinite loops",
+            "B) To represent computations that may fail",
+            "C) To store multiple values",
+            "D) To handle user authentication"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 7,
+        "question": "Which method is commonly used to apply functions inside a Monad?",
+        "options": [
+            "A) reduce",
+            "B) map",
+            "C) filter",
+            "D) splice"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 8,
+        "question": "How does the Result Monad handle errors in Python?",
+        "options": [
+            "A) By throwing exceptions",
+            "B) By stopping execution immediately",
+            "C) By representing success as 'Ok' and failure as 'Err'",
+            "D) By logging errors to the console"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 9,
+        "question": "Which of the following best describes an Applicative Functor?",
+        "options": [
+            "A) A Functor that applies a function wrapped in a container to a value wrapped in a container",
+            "B) A Functor that modifies global variables",
+            "C) A Functor that does not allow function application",
+            "D) A Functor that can only be used once"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 10,
+        "question": "How does the 'Promise.all' function behave in JavaScript?",
+        "options": [
+            "A) It rejects if any promise fails",
+            "B) It executes promises one by one sequentially",
+            "C) It ignores failed promises",
+            "D) It stops execution after the first resolved promise"
+        ],
+        "answer": 1
+    }
+]

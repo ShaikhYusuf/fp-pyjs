@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is a first-class function in functional programming?",
+        "options": [
+            "A) A function that modifies global variables",
+            "B) A function that must be the first to execute",
+            "C) A function that can be assigned to a variable, passed as an argument, or returned",
+            "D) A function that executes before any other function"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "What is a higher-order function?",
+        "options": [
+            "A) A function that modifies external state",
+            "B) A function that only works with primitive data types",
+            "C) A function that can take other functions as arguments or return functions",
+            "D) A function that executes another function"
+        ],
+        "answer": 3
+    },
+    {
+        "id": 3,
+        "question": "Which of the following is an example of a pure function?",
+        "options": [
+            "A) A function that logs values to the console",
+            "B) A function that modifies global variables",
+            "C) A function that writes data to a file",
+            "D) A function that always returns the same output for the same input"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 4,
+        "question": "Which method ensures an object remains immutable in JavaScript?",
+        "options": [
+            "A) Object.harden()",
+            "B) Object.protect()",
+            "C) Object.lock()",
+            "D) Object.freeze()"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 5,
+        "question": "What will be the output of the following code? `const square = x => x * x; console.log(square(5));`",
+        "options": [
+            "A) Undefined",
+            "B) 5",
+            "C) 10",
+            "D) 25"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 6,
+        "question": "Which of the following is NOT a characteristic of functional programming?",
+        "options": [
+            "A) Higher-order functions",
+            "B) Immutability",
+            "C) Pure functions",
+            "D) Modifying global variables"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 7,
+        "question": "What does the 'map' function do in functional programming?",
+        "options": [
+            "A) Creates a new array by applying a function to each element",
+            "B) Removes elements from an array",
+            "C) Merges two arrays",
+            "D) Modifies each element in an array in place"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 8,
+        "question": "Which of the following is an example of a lambda function in Python?",
+        "options": [
+            "A) `lambda x: x * 2`",
+            "B) `class LambdaFunction: pass`",
+            "C) `def lambda(): pass`",
+            "D) `def add(a, b): return a + b`"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 9,
+        "question": "What is the main advantage of pure functions?",
+        "options": [
+            "A) They run faster than all other functions",
+            "B) They are unpredictable",
+            "C) They always modify the global state",
+            "D) They produce consistent outputs and have no side effects"
+        ],
+        "answer": 4
+    },
+    {
+        "id": 10,
+        "question": "What does the 'reduce' function do in functional programming?",
+        "options": [
+            "A) Filters out unwanted values",
+            "B) Reduces the size of an array",
+            "C) Applies a function to accumulate values into a single output",
+            "D) Creates a copy of an array"
+        ],
+        "answer": 3
+    }
+]

@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "question": "What is a key characteristic of a pure function?",
+        "options": [
+            "A) It modifies global variables",
+            "B) It has no side effects",
+            "C) It depends on external inputs",
+            "D) It performs I/O operations"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 2,
+        "question": "Which of the following is an example of a higher-order function?",
+        "options": [
+            "A) A function that returns another function",
+            "B) A function that takes numbers as input",
+            "C) A function that modifies an external variable",
+            "D) A function that uses a loop"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 3,
+        "question": "What does the `pipe` function do in Ramda?",
+        "options": [
+            "A) Executes functions sequentially from right to left",
+            "B) Executes functions sequentially from left to right",
+            "C) Randomly applies functions to data",
+            "D) Executes only the first function in the chain"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 4,
+        "question": "Which of the following best describes `reduce` in Python?",
+        "options": [
+            "A) It maps a function over a list",
+            "B) It applies a function cumulatively to reduce a sequence to a single value",
+            "C) It filters elements based on a condition",
+            "D) It creates a new list with transformed elements"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 5,
+        "question": "What is the purpose of the `lru_cache` decorator in Python?",
+        "options": [
+            "A) It executes a function faster",
+            "B) It caches function results to optimize repeated computations",
+            "C) It modifies function arguments",
+            "D) It automatically converts a function into a lambda"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 6,
+        "question": "How does `fromEvent` work in RxJS?",
+        "options": [
+            "A) It creates an observable from an event source",
+            "B) It executes a function immediately",
+            "C) It modifies the event before it occurs",
+            "D) It removes event listeners from an element"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 7,
+        "question": "Which statement is true about `partial` in Python?",
+        "options": [
+            "A) It applies a function to each element in a list",
+            "B) It fixes some arguments of a function, creating a new function",
+            "C) It reduces a function's execution time",
+            "D) It modifies global variables"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 8,
+        "question": "Which JavaScript library provides functional utilities such as `map`, `filter`, and `pipe`?",
+        "options": [
+            "A) jQuery",
+            "B) Lodash FP",
+            "C) Bootstrap",
+            "D) Express.js"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 9,
+        "question": "Which Python library allows function chaining using `>>`?",
+        "options": [
+            "A) toolz",
+            "B) fn",
+            "C) PyFunctional",
+            "D) functools"
+        ],
+        "answer": 2
+    },
+    {
+        "id": 10,
+        "question": "What is the purpose of property-based testing?",
+        "options": [
+            "A) To test properties of objects",
+            "B) To generate random test cases and check function properties",
+            "C) To check if a function modifies global state",
+            "D) To ensure a function has no errors"
+        ],
+        "answer": 2
+    }
+]
